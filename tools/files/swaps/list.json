@@ -21,8 +21,19 @@
                     "name": "Birds Of Prey", 
                     "preview": ""
                     
+                },
+				{
+                    "id": "druidflightkultiran",
+                    "name": "Kultiran", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "druidflightzandalaritroll",
+                    "name": "Zandalari Troll", 
+                    "preview": ""
+                    
                 }
-				
             ]
         },
         {
