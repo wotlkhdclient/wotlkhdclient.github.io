@@ -47,7 +47,7 @@
                     
                 },
 				{
-                    "id": "Undead_Eagle",
+                    "id": "Undead-Eagle",
                     "name": "Undead Eagle", 
                     "preview": ""
                     
@@ -101,7 +101,7 @@
                     
                 },
 				{
-                    "id": "Undead_Eagle",
+                    "id": "Undead-Eagle",
                     "name": "Undead Eagle", 
                     "preview": ""
                     
@@ -124,27 +124,27 @@
             "name": "Druid Cat Form (Horde)",
             "to": [
                 {
-                    "id": "druidcat2_artifact1",
+                    "id": "druidcat2-artifact1",
                     "name": "Legion Artefact 1",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact2",
+                    "id": "druidcat2-artifact2",
                     "name": "Legion Artefact 2",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact3",
+                    "id": "druidcat2-artifact3",
                     "name": "Legion Artefact 3",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact4",
+                    "id": "druidcat2-artifact4",
                     "name": "Legion Artefact 4",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact5",
+                    "id": "druidcat2-artifact5",
                     "name": "Legion Artefact 5",
                     "preview": ""
                 }
@@ -155,27 +155,27 @@
             "name": "Druid Cat Form (Alliance)",
             "to": [
                 {
-                    "id": "druidcat2_artifact1",
+                    "id": "druidcat2-artifact1",
                     "name": "Legion Artefact 1",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact2",
+                    "id": "druidcat2-artifact2",
                     "name": "Legion Artefact 2",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact3",
+                    "id": "druidcat2-artifact3",
                     "name": "Legion Artefact 3",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact4",
+                    "id": "druidcat2-artifact4",
                     "name": "Legion Artefact 4",
                     "preview": ""
                 },
 				{
-                    "id": "druidcat2_artifact5",
+                    "id": "druidcat2-artifact5",
                     "name": "Legion Artefact 5",
                     "preview": ""
                 }
@@ -212,7 +212,7 @@
             "name": "Druid Aqua Form",
             "to": [
                 {
-                    "id": "orca_druid",
+                    "id": "orca-druid",
                     "name": "Orca",
                     "preview": ""
                 },
