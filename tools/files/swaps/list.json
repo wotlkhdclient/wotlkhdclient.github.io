@@ -163,7 +163,7 @@
             "to": [
                 {
                     "id": "ardenwealdstag",
-                    "name": "Ardenweald stag",
+                    "name": "Ardenweald Stag",
                     "preview": ""
                 },
 				{
@@ -178,6 +178,32 @@
                 },
 				{
                     "id": "druidtravelzandalaritroll",
+                    "name": "Zandalari Troll",
+                    "preview": ""
+                }
+            ]
+        },
+		{
+            "groupid": "druidaquaform",
+            "name": "Druid Aqua Form",
+            "to": [
+                {
+                    "id": "orca_druid",
+                    "name": "Orca",
+                    "preview": ""
+                },
+				{
+                    "id": "goldfish",
+                    "name": "Goldfish",
+                    "preview": ""
+                },
+				{
+                    "id": "druidaquatickultiran",
+                    "name": "Kultiran",
+                    "preview": ""
+                },
+				{
+                    "id": "druidaquaticzandalari",
                     "name": "Zandalari Troll",
                     "preview": ""
                 }
