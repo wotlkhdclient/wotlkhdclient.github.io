@@ -5,7 +5,7 @@
             "name": "Druid Flight Form (Horde)",
             "to": [
                 {
-                    "id": "honey-bee",
+                    "id": "beecritter",
                     "name": "Honey Bee", 
                     "preview": ""
                     
@@ -33,6 +33,53 @@
                     "name": "Zandalari Troll", 
                     "preview": ""
                     
+                },
+				{
+                    "id": "firefly",
+                    "name": "Firefly", 
+                    "preview": ""
+                    
+                }
+            ]
+        },
+		     "groupid": "druid-flight-a",
+            "name": "Druid Flight Form (Horde)",
+            "to": [
+                {
+                    "id": "beecritter",
+                    "name": "Honey Bee", 
+                    "preview": ""
+                    
+                },
+                {
+                    "id": "spirit-gryphon",
+                    "name": "Spirit Gryphon", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "BirdsOfPrey",
+                    "name": "Birds Of Prey", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "druidflightkultiran",
+                    "name": "Kultiran", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "druidflightzandalaritroll",
+                    "name": "Zandalari Troll", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "firefly",
+                    "name": "Firefly", 
+                    "preview": ""
+                    
                 }
             ]
         },
@@ -43,6 +90,68 @@
                 {
                     "id": "patricklichking",
                     "name": "Patrick Lich King",
+                    "preview": ""
+                }
+            ]
+        },
+		{
+            "groupid": "druid-cat-h",
+            "name": "Druid Cat Form (Horde)",
+            "to": [
+                {
+                    "id": "druidcat2_artifact1",
+                    "name": "Legion Artefact 1",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact2",
+                    "name": "Legion Artefact 2",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact3",
+                    "name": "Legion Artefact 3",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact4",
+                    "name": "Legion Artefact 4",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact5",
+                    "name": "Legion Artefact 5",
+                    "preview": ""
+                }
+            ]
+        },
+		{
+            "groupid": "druid-cat-a",
+            "name": "Druid Cat Form (Horde)",
+            "to": [
+                {
+                    "id": "druidcat2_artifact1",
+                    "name": "Legion Artefact 1",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact2",
+                    "name": "Legion Artefact 2",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact3",
+                    "name": "Legion Artefact 3",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact4",
+                    "name": "Legion Artefact 4",
+                    "preview": ""
+                },
+				{
+                    "id": "druidcat2_artifact5",
+                    "name": "Legion Artefact 5",
                     "preview": ""
                 }
             ]
