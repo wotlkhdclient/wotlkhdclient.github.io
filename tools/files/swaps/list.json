@@ -39,6 +39,18 @@
                     "name": "Firefly", 
                     "preview": ""
                     
+                },
+				{
+                    "id": "FelBat",
+                    "name": "FelBat", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "Undead_Eagle",
+                    "name": "Undead Eagle", 
+                    "preview": ""
+                    
                 }
             ]
         },
@@ -79,6 +91,18 @@
 				{
                     "id": "firefly",
                     "name": "Firefly", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "FelBat",
+                    "name": "FelBat", 
+                    "preview": ""
+                    
+                },
+				{
+                    "id": "Undead_Eagle",
+                    "name": "Undead Eagle", 
                     "preview": ""
                     
                 }
