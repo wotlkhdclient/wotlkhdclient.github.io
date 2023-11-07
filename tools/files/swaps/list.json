@@ -43,7 +43,7 @@
             ]
         },
 		     "groupid": "druid-flight-a",
-            "name": "Druid Flight Form (Horde)",
+            "name": "Druid Flight Form (Alliance)",
             "to": [
                 {
                     "id": "beecritter",
@@ -127,7 +127,7 @@
         },
 		{
             "groupid": "druid-cat-a",
-            "name": "Druid Cat Form (Horde)",
+            "name": "Druid Cat Form (Alliance)",
             "to": [
                 {
                     "id": "druidcat2_artifact1",
