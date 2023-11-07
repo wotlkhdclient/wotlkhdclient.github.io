@@ -156,6 +156,32 @@
                     "preview": ""
                 }
             ]
+        },
+		 {
+            "groupid": "druidtravel",
+            "name": "Druid Travel Form",
+            "to": [
+                {
+                    "id": "ardenwealdstag",
+                    "name": "Ardenweald stag",
+                    "preview": ""
+                },
+				 {
+                    "id": "camel",
+                    "name": "Camel",
+                    "preview": ""
+                },
+				{
+                    "id": "druidtravelkultiran",
+                    "name": "Kultiran",
+                    "preview": ""
+                },
+				{
+                    "id": "druidtravelzandalaritroll",
+                    "name": "Zandalari Troll",
+                    "preview": ""
+                },
+            ]
         }
     ]
 }
