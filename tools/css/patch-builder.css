@@ -50,6 +50,8 @@
 .btn-warcraft-blue {
     background: #15558d;
     border-color: #15558d;
+    --bs-btn-active-bg: #0b3150;
+    --bs-btn-active-border-color: #0b3150;
 }
 
 .btn-warcraft-blue:hover {
@@ -57,9 +59,16 @@
     border-color: #0b3150;
 }
 
+.btn-warcraft-blue:focus {
+    background: #0b3150;
+    border-color: #0b3150;
+}
+
 .btn-torrent {
     background: rgb(33, 141, 141);
     border-color: rgb(33, 141, 141);
+    --bs-btn-active-bg: rgb(5, 95, 95);
+    --bs-btn-active-border-color: rgb(5, 95, 95);
 }
 
 .btn-torrent:hover {
@@ -67,14 +76,26 @@
     border-color: rgb(5, 95, 95);
 }
 
+.btn-torrent:focus {
+    background: rgb(5, 95, 95);
+    border-color: rgb(5, 95, 95);
+}
+
 .btn-discord {
     background: #5865f2;
     border-color: #5865f2;
+    --bs-btn-active-bg: #4752c9;
+    --bs-btn-active-border-color: #4752c9;
 }
 
 .btn-discord:hover {
     background: #4752c9;
 }
+
+.btn-discord:focus {
+    background: #4752c9;
+}
+
 
 a.btn.btn-outline-light.btn-circle.m-1 {
     --bs-btn-border-width: 2px;
