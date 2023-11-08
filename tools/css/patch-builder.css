@@ -1,13 +1,13 @@
 .pb-logo {
     background-color: white;
-    -webkit-mask: url(../../assets/wowi.svg) no-repeat center / contain;
-    mask: url(../../assets/wowi.svg) no-repeat center / contain;
+    -webkit-mask: url(../assets/wowi.svg) no-repeat center / contain;
+    mask: url(../assets/wowi.svg) no-repeat center / contain;
     width: 128px;
     height: 128px;
 }
 
 .pb-bg {
-    background-image: url('../../assets/bg.jpg');
+    background-image: url('../assets/bg.jpg');
     background-size: cover;
     background-position: 0% 25%;
 }
