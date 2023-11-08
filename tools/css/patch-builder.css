@@ -48,12 +48,23 @@
 }
 
 .btn-warcraft-blue {
-    background: rgb(21, 85, 141);
-    border-color: rgb(24, 47, 88);
+    background: #15558d;
+    border-color: #15558d;
 }
 
 .btn-warcraft-blue:hover {
-    background: rgb(24, 47, 88);
+    background: #0b3150;
+    border-color: #0b3150;
+}
+
+.btn-torrent {
+    background: rgb(33, 141, 141);
+    border-color: rgb(33, 141, 141);
+}
+
+.btn-torrent:hover {
+    background: rgb(5, 95, 95);
+    border-color: rgb(5, 95, 95);
 }
 
 .btn-discord {
@@ -62,7 +73,7 @@
 }
 
 .btn-discord:hover {
-    background: #5865f2;
+    background: #4752c9;
 }
 
 a.btn.btn-outline-light.btn-circle.m-1 {
