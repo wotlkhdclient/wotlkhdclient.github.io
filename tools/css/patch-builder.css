@@ -1,3 +1,17 @@
+.pb-logo {
+    background-color: white;
+    -webkit-mask: url(../../assets/wowi.svg) no-repeat center / contain;
+    mask: url(../../assets/wowi.svg) no-repeat center / contain;
+    width: 128px;
+    height: 128px;
+}
+
+.pb-bg {
+    background-image: url('../../assets/bg.jpg');
+    background-size: cover;
+    background-position: 0% 25%;
+}
+
 .btn-circle {
     width: 45px;
     height: 45px;
@@ -36,7 +50,6 @@
 .btn-warcraft-blue {
     background: rgb(21, 85, 141);
     border-color: rgb(24, 47, 88);
-    /*background: linear-gradient(180deg, rgba(24,47,88,1) 0%, rgba(21,85,141,1) 50%, rgba(24,47,88,1) 100%);*/
 }
 
 .btn-warcraft-blue:hover {
@@ -44,13 +57,12 @@
 }
 
 .btn-discord {
-    color: #5865f2;
+    background: #5865f2;
     border-color: #5865f2;
 }
 
 .btn-discord:hover {
     background: #5865f2;
-    color: white;
 }
 
 a.btn.btn-outline-light.btn-circle.m-1 {
