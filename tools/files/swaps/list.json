@@ -232,6 +232,28 @@
                     "preview": ""
                 }
             ]
+        },
+        {
+            "groupid": "druidowlform-h",
+            "name": "Druid Owl Form (Horde)",
+            "to": [
+                {
+                    "id": "alglon-the-observer",
+                    "name": "Algalon the Observer",
+                    "preview": ""
+                }
+            ]
+        },
+        {
+            "groupid": "druidowlform-a",
+            "name": "Druid Owl Form (Alliance)",
+            "to": [
+                {
+                    "id": "alglon-the-observer",
+                    "name": "Algalon the Observer",
+                    "preview": ""
+                }
+            ]
         }
     ]
 }
