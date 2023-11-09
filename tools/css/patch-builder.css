@@ -126,8 +126,8 @@ a.btn.btn-outline-light.btn-circle.m-1 {
 }
 
 .callout-info {
-    --callout-bg: rgba(var(--bs-info-rgb), .075);
-    --callout-border: rgba(var(--bs-info-rgb), .5)
+    --callout-bg: rgba(33, 141, 141, .075);
+    --callout-border: rgba(33, 141, 141, .5)
 }
 
 .callout-warning {
@@ -160,4 +160,13 @@ a.btn.btn-outline-light.btn-circle.m-1 {
     height: 1.5rem;
     width: calc(2rem + 0.75rem);
     border-radius: 3rem;
+}
+
+.form-check-input-blue:checked {
+    background-color: #15558d;
+    border-color: #15558d;
+}
+
+.link-info {
+    color: rgb(5, 95, 95)!important;
 }
