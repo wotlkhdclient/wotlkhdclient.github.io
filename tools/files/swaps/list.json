@@ -125,27 +125,27 @@
             "to": [
                 {
                     "id": "druidcat2-artifact1",
-                    "name": "Legion Artefact 1",
+                    "name": "Legion Artifact 1",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact2",
-                    "name": "Legion Artefact 2",
+                    "name": "Legion Artifact 2",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact3",
-                    "name": "Legion Artefact 3",
+                    "name": "Legion Artifact 3",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact4",
-                    "name": "Legion Artefact 4",
+                    "name": "Legion Artifact 4",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact5",
-                    "name": "Legion Artefact 5",
+                    "name": "Legion Artifact 5",
                     "preview": ""
                 }
             ]
@@ -156,27 +156,27 @@
             "to": [
                 {
                     "id": "druidcat2-artifact1",
-                    "name": "Legion Artefact 1",
+                    "name": "Legion Artifact 1",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact2",
-                    "name": "Legion Artefact 2",
+                    "name": "Legion Artifact 2",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact3",
-                    "name": "Legion Artefact 3",
+                    "name": "Legion Artifact 3",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact4",
-                    "name": "Legion Artefact 4",
+                    "name": "Legion Artifact 4",
                     "preview": ""
                 },
 				{
                     "id": "druidcat2-artifact5",
-                    "name": "Legion Artefact 5",
+                    "name": "Legion Artifact 5",
                     "preview": ""
                 }
             ]
@@ -251,6 +251,32 @@
                 {
                     "id": "alglon-the-observer",
                     "name": "Algalon the Observer",
+                    "preview": ""
+                }
+            ]
+        },
+        {
+            "groupid": "druidtreeform",
+            "name": "Druid Aqua Form",
+            "to": [
+                {
+                    "id": "botani-red",
+                    "name": "Botani (Red Skin)",
+                    "preview": ""
+                },
+				{
+                    "id": "botani-blue",
+                    "name": "Botani (Blue Skin)",
+                    "preview": ""
+                },
+                {
+                    "id": "botani-brown",
+                    "name": "Botani (Brown Skin)",
+                    "preview": ""
+                },
+                {
+                    "id": "botani-purple",
+                    "name": "Botani (Purple Skin)",
                     "preview": ""
                 }
             ]
