@@ -265,7 +265,7 @@ buildPatch = async () => {
     .file("CreatureDisplayInfo.dbc", cdiResult)
     .file("CreatureModelData.dbc", cmdResult);
 
-  archive.generateAsync({ type: "blob" }).then((content) => {
+  await archive.generateAsync({ type: "blob" }).then((content) => {
     build.href = URL.createObjectURL(content);
     build.className = "btn btn-success";
     build.download = `patch-${langselect.value}-x.mpq.zip`;
