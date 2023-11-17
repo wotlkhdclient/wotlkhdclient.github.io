@@ -46,11 +46,11 @@
     },
     {
       "name": "m_footstepShakeSize",
-      "type": "float"
+      "type": "long"
     },
     {
       "name": "m_deathThudShakeSize",
-      "type": "float"
+      "type": "long"
     },
     {
       "name": "m_soundID",
