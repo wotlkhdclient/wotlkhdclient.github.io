@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Tools</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dev Tools</h1>
+        <div class="row">
+            <div class="col">
+                <h2>ModelData</h2>
+                <div class="mb-3">
+                    <label for="modeldata-csv" class="form-label">Insert Data</label>
+                    <textarea class="form-control" id="modeldata-csv" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="modeldata-json" class="form-label">Copy Data</label>
+                    <textarea class="form-control" id="modeldata-json" rows="3" readonly></textarea>
+                </div>
+                <div class="mb-3">
+                    <button id="modeldata-convert" class="btn btn-primary">Convert</button>
+                </div>
+            </div>
+            <div class="col">
+                <h2>DisplayData</h2>
+                <div class="mb-3">
+                    <label for="displaydata-csv" class="form-label">Insert Data</label>
+                    <textarea class="form-control" id="displaydata-csv" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="displaydata-json" class="form-label">Copy Data</label>
+                    <textarea class="form-control" id="displaydata-json" rows="3" readonly></textarea>
+                </div>
+                <div class="mb-3">
+                    <button id="displaydata-convert" class="btn btn-primary">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <textarea id="modeldata-csv" cols="30" rows="10"></textarea>
+    <textarea id="modeldata-json" cols="30" rows="10"></textarea>
+    <button id="modeldata-convert">Конвертировать</button>
+
+    <textarea id="displaydata-csv" cols="30" rows="10"></textarea>
+    <textarea id="displaydata-json" cols="30" rows="10"></textarea>
+    <button id="displaydata-convert">Конвертировать</button> -->
+
+    <script src="js/dev.js"></script>
+</body>
+
+</html>
