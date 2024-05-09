@@ -16,19 +16,24 @@ var modeldata_header = [
     "m_worldEffectScale", "m_attachedEffectScale", "m_missileCollisionRadius", "m_missileCollisionPush", "m_missileCollisionRaise"
 ]
 
-$('#modeldata-convert').on('click', () => {
-    var csv = $('#modeldata-csv').val();
+$('#cmd-convert').on('click', () => {
+    // Get value and delete quote
+    var csv = $('#cmd-csv').val().replace(/"/g, "");
     var lines = csv.split('\n');
     var data = [];
     for (var i = 0; i < lines.length; i++) {
         var record = {};
         var values = lines[i].split(',');
+        if (values.length != modeldata_header.length) {
+            $('#cmd-json').val('Your data length doesn\'t match CreatureModelData header length');
+            return;
+        }
         for (var j = 0; j < values.length; j++) {
             record[modeldata_header[j]] = values[j];
         }
         data.push(record);
     }
-    $('#modeldata-json').val(JSON.stringify(data));
+    $('#cmd-json').val(JSON.stringify(data));
 })
 
 /**
@@ -45,19 +50,23 @@ var displaydata_header = [
     "m_bloodID", "m_npcSoundID", "m_particleColorID", "m_creatureGeosetData", "m_objectEffectPackageID"
 ]
 
-$('#displaydata-convert').on('click', () => {
-    var csv = $('#displaydata-csv').val();
+$('#cdi-convert').on('click', () => {
+    var csv = $('#cdi-csv').val().replace(/"/g, "");
     var lines = csv.split('\n');
     var data = [];
     for (var i = 0; i < lines.length; i++) {
         var record = {};
         var values = lines[i].split(',');
+        if (values.length !== displaydata_header.length) {
+            $('#cdi-json').val('Your data length doesn\'t match CreatureDisplayInfo header length');
+            return;
+        }
         for (var j = 0; j < values.length; j++) {
             record[displaydata_header[j]] = values[j];
         }
         data.push(record);
     }
-    $('#displaydata-json').val(JSON.stringify(data));
+    $('#cdi-json').val(JSON.stringify(data));
 })
 
 // Select all text on focus in textarea
