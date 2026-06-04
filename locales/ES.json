@@ -1,0 +1,15 @@
+{
+  "home_title": "Página de inicio",
+  "home_message": "Bienvenido a la página de inicio",
+  "footer_copy": "© 2025 WotLK HD Client",
+
+  "header_home": "Inicio",
+  "header_pb": "Constructor de parches",
+  "header_calculator": "Calculadora WorldMapArea",
+  "header_mohelper": "MO Helper",
+
+  "notfound_title": "404 Not Found",
+  "notfound_message": "Esta página no existe. Por suerte, el gato sigue ahí. Prioridades.",
+
+  "pb_title": "Constructor de parches"
+}

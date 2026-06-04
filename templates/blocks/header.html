@@ -1,0 +1,71 @@
+<div class="container-xl px-4">
+  <!-- Logo -->
+  <a class="wh-navbar__logo navbar-brand" href="/">
+    <span class="wh-navbar__logo-img">LOGO</span>
+    <span class="wh-navbar__logo-badge">HD</span>
+  </a>
+
+  <!-- Burger -->
+  <button class="wh-navbar__burger navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="wh-navbar__burger-line"></span>
+    <span class="wh-navbar__burger-line"></span>
+    <span class="wh-navbar__burger-line"></span>
+  </button>
+
+  <!-- Links -->
+  <div class="collapse navbar-collapse" id="navMenu">
+    <ul class="navbar-nav ms-auto align-items-md-center gap-1">
+      <li class="nav-item"><a class="wh-nav-link" href="#/" data-t="nav.home">Home</a></li>
+      <li class="nav-item"><a class="wh-nav-link" href="#/patches" data-t="nav.patches">Patches</a></li>
+      <li class="nav-item"><a class="wh-nav-link" href="#/compatches" data-t="nav.community_patches">Community Patches</a></li>
+      <li class="nav-item"><a class="wh-nav-link" href="#/pb" data-t="nav.patchbuilder">Patch Builder</a></li>
+      <li class="nav-item"><a class="wh-nav-link" href="https://discord.gg/Gyb9Z252vt" target="_blank" data-t="nav.discord">Discord</a></li>
+      <li class="nav-item ms-2 mt-2 mt-md-0">
+        <a class="wh-nav-cta" href="#/download" data-t="nav.download">Download</a>
+      </li>
+
+      <!-- Language picker -->
+      <li class="nav-item wh-lang-picker dropdown ms-1">
+        <button class="wh-lang-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-globe wh-lang-trigger__globe"></i>
+          <span class="wh-lang-trigger__code">EN</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end wh-lang-dropdown">
+          <li>
+            <button class="wh-lang-item active">
+              <span class="wh-lang-flag">🇬🇧</span>
+              <span class="wh-lang-name">English</span>
+              <span class="wh-lang-code">EN</span>
+              <i class="fa-solid fa-check wh-lang-check ms-auto"></i>
+            </button>
+          </li>
+          <li>
+            <hr class="dropdown-divider wh-lang-divider">
+          </li>
+          <li>
+            <button class="wh-lang-item">
+              <span class="wh-lang-flag">🇷🇺</span>
+              <span class="wh-lang-name">Русский</span>
+              <span class="wh-lang-code">RU</span>
+            </button>
+          </li>
+          <li>
+            <button class="wh-lang-item">
+              <span class="wh-lang-flag">🇩🇪</span>
+              <span class="wh-lang-name">Deutsch</span>
+              <span class="wh-lang-code">DE</span>
+            </button>
+          </li>
+          <li>
+            <button class="wh-lang-item">
+              <span class="wh-lang-flag">🇫🇷</span>
+              <span class="wh-lang-name">Français</span>
+              <span class="wh-lang-code">FR</span>
+            </button>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

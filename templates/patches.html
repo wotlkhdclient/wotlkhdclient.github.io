@@ -1,0 +1,131 @@
+<!-- ══════════ PAGE HERO ══════════ -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-radial"></div>
+  <div class="page-hero-line"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <p class="page-eyebrow">WotLK HD Client · 3.3.5a</p>
+      <h1 class="page-title" data-t="patches.hero_title">Patch <em>Descriptions</em></h1>
+      <p class="page-desc" data-t="patches.hero_desc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CATEGORY TABS ══════════ -->
+<div class="cat-section">
+  <div class="cat-inner" id="catTabs">
+    <button class="cat-btn active" data-cat="all" onclick="filterCat(this,'all')">
+      Все патчи <span class="cat-count" id="count-all">124</span>
+    </button>
+    <button class="cat-btn" data-cat="textures" onclick="filterCat(this,'textures')">
+      <span class="cat-dot" style="background:#8cc8f5"></span>
+      Текстуры <span class="cat-count">38</span>
+    </button>
+    <button class="cat-btn" data-cat="spells" onclick="filterCat(this,'spells')">
+      <span class="cat-dot" style="background:#c088f5"></span>
+      Заклинания <span class="cat-count">27</span>
+    </button>
+    <button class="cat-btn" data-cat="models" onclick="filterCat(this,'models')">
+      <span class="cat-dot" style="background:#e8a030"></span>
+      Модели <span class="cat-count">22</span>
+    </button>
+    <button class="cat-btn" data-cat="env" onclick="filterCat(this,'env')">
+      <span class="cat-dot" style="background:#3dd68c"></span>
+      Окружение <span class="cat-count">19</span>
+    </button>
+    <button class="cat-btn" data-cat="items" onclick="filterCat(this,'items')">
+      <span class="cat-dot" style="background:#f08080"></span>
+      Предметы <span class="cat-count">13</span>
+    </button>
+    <button class="cat-btn" data-cat="ui" onclick="filterCat(this,'ui')">
+      <span class="cat-dot" style="background:#50d0f0"></span>
+      Интерфейс <span class="cat-count">5</span>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════ PATCHES CATALOG ══════════ -->
+<main class="patches-main">
+  <div class="container" id="catalogContainer">
+
+    <!-- ─── TEXTURES ─── -->
+    <div class="cat-group cat-textures" id="group-textures">
+      <div class="cat-group-header reveal">
+        <div class="cat-group-icon">🖼</div>
+        <div class="cat-group-info">
+          <div class="cat-group-name">Текстуры</div>
+          <div class="cat-group-desc">HD-замена текстур земли, архитектуры, растительности и интерьеров</div>
+        </div>
+        <div class="cat-group-badge">38 патчей</div>
+      </div>
+      <div class="patch-grid" id="grid-textures"></div>
+    </div>
+
+    <!-- ─── SPELLS ─── -->
+    <div class="cat-group cat-spells" id="group-spells">
+      <div class="cat-group-header reveal">
+        <div class="cat-group-icon">✨</div>
+        <div class="cat-group-info">
+          <div class="cat-group-name">Заклинания и VFX</div>
+          <div class="cat-group-desc">Переработанные партикловые системы для заклинаний и способностей всех классов</div>
+        </div>
+        <div class="cat-group-badge">27 патчей</div>
+      </div>
+      <div class="patch-grid" id="grid-spells"></div>
+    </div>
+
+    <!-- ─── MODELS ─── -->
+    <div class="cat-group cat-models" id="group-models">
+      <div class="cat-group-header reveal">
+        <div class="cat-group-icon">🧩</div>
+        <div class="cat-group-info">
+          <div class="cat-group-name">Модели персонажей</div>
+          <div class="cat-group-desc">Улучшенные модели рас, NPC и существ с повышенным полигонажем</div>
+        </div>
+        <div class="cat-group-badge">22 патча</div>
+      </div>
+      <div class="patch-grid" id="grid-models"></div>
+    </div>
+
+    <!-- ─── ENVIRONMENT ─── -->
+    <div class="cat-group cat-env" id="group-env">
+      <div class="cat-group-header reveal">
+        <div class="cat-group-icon">🌿</div>
+        <div class="cat-group-info">
+          <div class="cat-group-name">Окружение</div>
+          <div class="cat-group-desc">Небо, вода, туман, облака и атмосферные эффекты для каждой зоны</div>
+        </div>
+        <div class="cat-group-badge">19 патчей</div>
+      </div>
+      <div class="patch-grid" id="grid-env"></div>
+    </div>
+
+    <!-- ─── ITEMS ─── -->
+    <div class="cat-group cat-items" id="group-items">
+      <div class="cat-group-header reveal">
+        <div class="cat-group-icon">⚔</div>
+        <div class="cat-group-info">
+          <div class="cat-group-name">Предметы и оружие</div>
+          <div class="cat-group-desc">HD-модели оружия, брони, легендарных предметов и аксессуаров</div>
+        </div>
+        <div class="cat-group-badge">13 патчей</div>
+      </div>
+      <div class="patch-grid" id="grid-items"></div>
+    </div>
+
+    <!-- ─── UI ─── -->
+    <div class="cat-group cat-ui" id="group-ui">
+      <div class="cat-group-header reveal">
+        <div class="cat-group-icon">🖥</div>
+        <div class="cat-group-info">
+          <div class="cat-group-name">Интерфейс</div>
+          <div class="cat-group-desc">Шрифты, рамки, иконки и элементы HUD в высоком разрешении</div>
+        </div>
+        <div class="cat-group-badge">5 патчей</div>
+      </div>
+      <div class="patch-grid" id="grid-ui"></div>
+    </div>
+
+  </div>
+</main>

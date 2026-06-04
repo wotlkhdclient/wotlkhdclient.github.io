@@ -1,0 +1,297 @@
+<div class="builder-wrap">
+
+    <!-- ════ LEFT SIDEBAR ════ -->
+    <aside class="steps-sidebar">
+        <div class="steps-sidebar-title">Шаги настройки</div>
+        <div class="step-item active" data-step="1">
+            <div class="step-num" id="sn1">1</div>
+            <div class="step-info">
+                <div class="step-name">Тип клиента</div>
+                <div class="step-sub" id="ss1">Выберите клиент WoW</div>
+            </div>
+        </div>
+        <div class="steps-connector"></div>
+        <div class="step-item locked" data-step="2">
+            <div class="step-num" id="sn2">2</div>
+            <div class="step-info">
+                <div class="step-name">Режим сборки</div>
+                <div class="step-sub" id="ss2">Простой или продвинутый</div>
+            </div>
+        </div>
+        <div class="steps-connector"></div>
+        <div class="step-item locked" data-step="3">
+            <div class="step-num" id="sn3">3</div>
+            <div class="step-info">
+                <div class="step-name">Замены моделей</div>
+                <div class="step-sub" id="ss3">Настройте замены</div>
+            </div>
+        </div>
+        <div class="steps-connector"></div>
+        <div class="step-item locked" data-step="4">
+            <div class="step-num" id="sn4">4</div>
+            <div class="step-info">
+                <div class="step-name">Язык клиента</div>
+                <div class="step-sub" id="ss4">Локализация</div>
+            </div>
+        </div>
+        <div class="steps-connector"></div>
+        <div class="step-item locked" data-step="5">
+            <div class="step-num" id="sn5">5</div>
+            <div class="step-info">
+                <div class="step-name">Сборка</div>
+                <div class="step-sub" id="ss5">Финальный шаг</div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ════ MAIN ════ -->
+    <main class="builder-main">
+
+        <!-- ═══ STEP 1: CLIENT ═══ -->
+        <div class="builder-panel active" id="panel-1">
+            <div class="panel-header">
+                <div class="panel-eyebrow">Шаг 1 из 5</div>
+                <div class="panel-title">Тип <span>клиента</span></div>
+                <div class="panel-desc">Выберите, для какого клиента WoW 3.3.5a генерируется патч. Это определяет
+                    базовые таблицы моделей.</div>
+            </div>
+            <div class="cards-row">
+                <div class="select-card" data-client="hd">
+                    <div class="card-radio"></div>
+                    <span class="select-card-icon">✨</span>
+                    <div class="select-card-name">HD Client</div>
+                    <div class="select-card-desc">Клиент с WoW HD Remaster. Таблицы включают HD-модели и текстуры.</div>
+                    <span class="select-card-badge badge-rec">Рекомендуется</span>
+                </div>
+                <div class="select-card" data-client="default">
+                    <div class="card-radio"></div>
+                    <span class="select-card-icon">🏛️</span>
+                    <div class="select-card-name">Default Client</div>
+                    <div class="select-card-desc">Стандартный WoW 3.3.5a. Базовые таблицы Blizzard без изменений.</div>
+                </div>
+                <div class="select-card" data-client="custom">
+                    <div class="card-radio"></div>
+                    <span class="select-card-icon">⚙️</span>
+                    <div class="select-card-name">Кастомный</div>
+                    <div class="select-card-desc">Клиент с любыми изменениями. Загрузите свои .dbc-файлы.</div>
+                    <span class="select-card-badge badge-adv">Продвинутый</span>
+                </div>
+            </div>
+
+            <div id="customDbcZone" style="display:none">
+                <div class="warn-banner"><span class="banner-icon">⚠️</span><span>Для кастомного клиента загрузите обе
+                        таблицы — они станут основой патча.</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                    <div class="field-group">
+                        <div class="field-label">CreatureDisplayInfo.dbc <span class="req">*</span></div>
+                        <div class="upload-zone" id="uz-cdi">
+                            <input type="file" accept=".dbc" onchange="handleDbc(this,'cdi')">
+                            <div class="upload-icon">📋</div>
+                            <div class="upload-label">Перетащите или <strong>выберите</strong></div>
+                            <div class="upload-sub">CreatureDisplayInfo.dbc</div>
+                            <div class="upload-loaded" id="ul-cdi"></div>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">CreatureModelData.dbc <span class="req">*</span></div>
+                        <div class="upload-zone" id="uz-cmd">
+                            <input type="file" accept=".dbc" onchange="handleDbc(this,'cmd')">
+                            <div class="upload-icon">🗂️</div>
+                            <div class="upload-label">Перетащите или <strong>выберите</strong></div>
+                            <div class="upload-sub">CreatureModelData.dbc</div>
+                            <div class="upload-loaded" id="ul-cmd"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-nav">
+                <div class="btn-spacer"></div>
+                <button class="btn-next" id="btn1" disabled>Далее →</button>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 2: MODE ═══ -->
+        <div class="builder-panel" id="panel-2">
+            <div class="panel-header">
+                <div class="panel-eyebrow">Шаг 2 из 5</div>
+                <div class="panel-title">Режим <span>сборки</span></div>
+                <div class="panel-desc">Простой режим — готовый список популярных замен. Продвинутый — полный список ID
+                    из CreatureDisplayInfo.dbc.</div>
+            </div>
+            <div class="cards-row cards-row-2">
+                <div class="select-card" data-mode="simple" onclick="selectMode(this)">
+                    <div class="card-radio"></div>
+                    <span class="select-card-icon">🎯</span>
+                    <div class="select-card-name">Простой</div>
+                    <div class="select-card-desc">Curated-список популярных существ. Идеально для быстрой настройки без
+                        DBC.</div>
+                    <span class="select-card-badge badge-rec">Рекомендуется</span>
+                </div>
+                <div class="select-card" data-mode="advanced" onclick="selectMode(this)">
+                    <div class="card-radio"></div>
+                    <span class="select-card-icon">🔬</span>
+                    <div class="select-card-name">Продвинутый</div>
+                    <div class="select-card-desc">Полный список из DBC. Все DisplayID доступны. Требует файл DBC.</div>
+                    <span class="select-card-badge badge-adv">DBC</span>
+                </div>
+            </div>
+
+            <div id="advDbcZone" style="display:none">
+                <div class="info-banner" id="advBanner">
+                    <span class="banner-icon">🔬</span>
+                    <div>
+                        CreatureDisplayInfo.dbc парсится прямо в браузере. Все DisplayID появятся в списках выбора.
+                        <div class="dbc-stats" id="advStats" style="display:none">
+                            <span class="dbc-stat">Записей: <strong id="advCount">0</strong></span>
+                            <span class="dbc-stat">Уникальных моделей: <strong id="advModels">0</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="advUploadWrap">
+                    <div class="field-group">
+                        <div class="field-label">CreatureDisplayInfo.dbc для парсинга</div>
+                        <div class="upload-zone" id="uz-adv">
+                            <input type="file" accept=".dbc" onchange="handleAdvDbc(this)">
+                            <div class="upload-icon">🔍</div>
+                            <div class="upload-label">Перетащите или <strong>выберите файл</strong></div>
+                            <div class="upload-sub">Парсится в браузере, на сервер не отправляется</div>
+                            <div class="upload-loaded" id="ul-adv"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-nav">
+                <button class="btn-back" onclick="goStep(1)">← Назад</button>
+                <div class="btn-spacer"></div>
+                <button class="btn-next" id="btn2" onclick="goStep(3)" disabled>Далее →</button>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 3: REPLACEMENTS ═══ -->
+        <div class="builder-panel" id="panel-3">
+            <div class="panel-header">
+                <div class="panel-eyebrow">Шаг 3 из 5</div>
+                <div class="panel-title">Замены <span>моделей</span></div>
+                <div class="panel-desc">Выберите модель для замены, укажите замену. Если доступны варианты раскраски —
+                    появится третий список.</div>
+            </div>
+
+            <div class="mode-toggle">
+                <button class="mode-btn active" id="modeSimpleBtn" onclick="switchViewMode('simple')">🎯
+                    Простой</button>
+                <button class="mode-btn" id="modeAdvBtn" onclick="switchViewMode('advanced')">🔬 Продвинутый <span
+                        class="mode-badge-adv">DBC</span></button>
+            </div>
+
+            <div id="advStripWrap" style="display:none">
+                <div class="info-banner" style="margin-bottom:18px">
+                    <span class="banner-icon">📊</span>
+                    <div>
+                        Продвинутый режим активен — список расширен записями из DBC.
+                        <div class="dbc-stats">
+                            <span class="dbc-stat">DBC записей: <strong id="stripCount">0</strong></span>
+                            <span class="dbc-stat">Итого в списках: <strong id="stripTotal">0</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="replacements-list" id="repList"></div>
+            <button class="add-row-btn" onclick="addRow()">
+                <span class="add-icon">+</span> Добавить замену модели
+            </button>
+
+            <div class="panel-nav">
+                <button class="btn-back" onclick="goStep(2)">← Назад</button>
+                <div class="btn-spacer"></div>
+                <span style="font-size:12px;color:var(--text-dim);margin-right:6px" id="rowCount"></span>
+                <button class="btn-next" id="btn3" onclick="goStep(4)" disabled>Далее →</button>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 4: LANGUAGE ═══ -->
+        <div class="builder-panel" id="panel-4">
+            <div class="panel-header">
+                <div class="panel-eyebrow">Шаг 4 из 5</div>
+                <div class="panel-title">Язык <span>клиента</span></div>
+                <div class="panel-desc">Укажите языковую версию клиента WoW. Это определяет путь к файлам внутри патча.
+                </div>
+            </div>
+            <div class="lang-grid" id="langGrid"></div>
+            <div class="panel-nav">
+                <button class="btn-back" onclick="goStep(3)">← Назад</button>
+                <div class="btn-spacer"></div>
+                <button class="btn-next" id="btn4" onclick="goStep(5)" disabled>Перейти к сборке →</button>
+            </div>
+        </div>
+
+        <!-- ═══ STEP 5: BUILD ═══ -->
+        <div class="builder-panel" id="panel-5">
+            <div class="panel-header">
+                <div class="panel-eyebrow">Шаг 5 из 5</div>
+                <div class="panel-title">Сборка <span>патча</span></div>
+                <div class="panel-desc">Проверьте конфигурацию и нажмите «Собрать». Патч генерируется в браузере.</div>
+            </div>
+
+            <div class="build-card">
+                <div class="build-card-title">Конфигурация</div>
+                <div class="summary-rows" id="summaryRows"></div>
+            </div>
+
+            <div class="build-card">
+                <div class="build-card-title">Список замен (<span id="buildRepCount">0</span>)</div>
+                <div id="buildRepList"></div>
+            </div>
+
+            <div class="build-progress-wrap" id="buildProgressWrap">
+                <div class="build-progress-header">
+                    <span id="buildStatus">Подготовка...</span>
+                    <span class="build-pct" id="buildPct">0%</span>
+                </div>
+                <div class="build-bar-track">
+                    <div class="build-bar-fill" id="buildBar"></div>
+                </div>
+                <div class="build-log" id="buildLog"></div>
+            </div>
+
+            <button class="btn-build" id="btnBuild" onclick="startBuild()">
+                <span class="spin"></span>⚙ Собрать патч
+            </button>
+            <button class="btn-download" id="btnDownload" onclick="downloadPatch()">
+                ⬇ Скачать патч (.zip)
+            </button>
+
+            <div class="panel-nav" style="margin-top:24px;padding-top:20px">
+                <button class="btn-back" onclick="goStep(4)">← Назад</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ════ RIGHT SIDEBAR ════ -->
+    <aside class="preview-sidebar">
+        <div class="preview-title">Предпросмотр</div>
+
+        <div class="preview-card">
+            <div class="preview-card-title">Конфигурация</div>
+            <div id="previewConfig">
+                <div class="preview-empty">Не настроено</div>
+            </div>
+        </div>
+
+        <div class="preview-card" style="flex:1;overflow-y:auto">
+            <div class="preview-card-title">Замены (<span id="previewRepCount">0</span>)</div>
+            <div id="previewReps">
+                <div class="preview-empty">Замены не добавлены</div>
+            </div>
+        </div>
+
+        <div class="preview-card">
+            <div class="preview-card-title">Готовность</div>
+            <div id="previewReady"></div>
+        </div>
+    </aside>
+
+</div>

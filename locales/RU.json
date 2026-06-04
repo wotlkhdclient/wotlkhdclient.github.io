@@ -1,0 +1,58 @@
+{
+  "home_title": "Главная страница | WotLK HD Client",
+  "notfound_title": "404 Не найдено | WotLK HD Client",
+  "pb_title": "Патч-билдер | WotLK HD Client",
+  "compatches_title": "Патчи сообщества | WotLK HD Client",
+  "patches_title": "Патчи | WotLK HD Client",
+  "nav": {
+    "home": "Главная",
+    "patches": "Патчи",
+    "community_patches": "Патчи сообщества",
+    "download": "Скачать",
+    "patchbuilder": "Патч-билдер",
+    "discord": "Discord"
+  },
+  "index": {
+    "title_line1": "Любимый мир WotLK",
+    "title_line2": "В совершенно новом облике",
+    "hero_desc": "Графические улучшения для оригинального клиента 3.3.5a: Обновленные текстуры, ремастер эффектов, улучшенные модели существ и оружия. Знакомый мир — с новыми ощущениями.",
+    "btn_download": "Скачать HD Client",
+    "btn_patchbuilder": "Онлайн Патч-билдер",
+    "hero_stat_label1": "Версия клиента",
+    "hero_stat_label2": "Модификаций",
+    "hero_stat_label3": "Членов сообщества",
+    "hero_stat_label4": "Лет активности",
+    "hero_scroll": "Прокрутите",
+    "comparison_label": "Визуальное Сравнение",
+    "comparison_title": "Ощутите |разницу|",
+    "comparison_lead": "Перетащите разделитель, чтобы сравнить оригинальную и улучшенную графику в разных локациях.",
+    "comparison_label_before": "Обычный клиент",
+    "comparison_label_after": "WotLK HD Client"
+  },
+  "footer": {
+    "note1": "WotLK HD Client - Некоммерческий проект · Не связан с Blizzard Entertainment",
+    "note2": "World of Warcraft® является торговой маркой Blizzard Entertainment"
+  },
+  "patches": {
+    "hero_title": "|Описание| патчей",
+    "hero_desc": "Ниже представлены патчи, добавленные в HD Client. С подробным описанием и картинками."
+  },
+  "download": {
+    "hero_title": "Скачать |HD Client|",
+    "hero_desc": "Выберите версию и удобный способ для загрузки.",
+    "changelog": "История изменений",
+    "changelog_title": "История изменений"
+  },
+  "cps": {
+    "hero_title": "Патчи |сообщества|",
+    "hero_desc": "Патчи от нашего сообщества.",
+    "makepatch_btn": "Создать патч",
+    "allrepos_btn": "Все репозитории",
+    "howto_step1": "Создайте репозиторий на GitHub",
+    "howto_step2": "Добавьте топик 'wotlkhdclient'",
+    "howto_step3": "Ваш патч появится здесь",
+    "info_banner": "Список формируется автоматически через |GitHub API|. Патчи сообщества не проверяются командой WoW HD Client — устанавливайте их на свой страх и риск.",
+    "search": "Поиск...",
+    "moreinfo": "Подробнее"
+  }
+}

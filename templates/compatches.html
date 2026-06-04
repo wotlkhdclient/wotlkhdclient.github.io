@@ -1,0 +1,120 @@
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-radial"></div>
+  <div class="page-hero-grid"></div>
+
+  <div class="page-hero-content">
+    <p class="page-eyebrow">WotLK HD Client · 3.3.5a</p>
+    <h1 class="page-title" data-t="cps.hero_title"><em>Community</em> Patches</h1>
+    <p class="page-desc" data-t="cps.hero_desc"></p>
+
+    <div class="page-hero-actions">
+      <a href="https://github.com/new" target="_blank" class="btn-submit">
+        <i class="fa-solid fa-brush"></i>
+        <span data-t="cps.makepatch_btn">Make a patch</span>
+      </a>
+      <a href="https://github.com/topics/wotlkhdclient" target="_blank" class="btn-ghost">
+        <i class="fa-brands fa-github"></i>
+        <span data-t="cps.allrepos_btn">All repositories</span>
+      </a>
+    </div>
+
+    <div class="how-banner">
+      <div class="how-step">
+        <div class="how-step-num">1</div>
+        <span data-t="cps.howto_step1">Create a repository on GitHub</span>
+      </div>
+      <span class="how-arrow">→</span>
+      <div class="how-step">
+        <div class="how-step-num">2</div>
+        <span data-t="cps.howto_step2"> Add topic <code
+            style="color:var(--accent-blue); font-weight:600">wotlkhdclient</code></span>
+      </div>
+      <span class="how-arrow">→</span>
+      <div class="how-step">
+        <div class="how-step-num">3</div>
+        <span data-t="cps.howto_step3">Your patch will appear here</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ MAIN CONTENT ══════ -->
+<section class="community-section">
+  <div class="container">
+
+    <div class="info-banner">
+      <span class="info-banner-icon"><i class="fa-solid fa-circle-info"></i></span>
+      <span data-t="cps.info_banner">The list is formed automatically through the <em>GitHub API</em>. Community patches
+        are not checked by WoW HD Client — install them at your own risk.</span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input type="text" class="search-input" id="searchInput" data-t-placeholder="cps.search" placeholder="Search...">
+      </div>
+
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-tag="all">Все</button>
+        <button class="filter-tab" data-tag="texture">Текстуры</button>
+        <button class="filter-tab" data-tag="model">Модели</button>
+        <button class="filter-tab" data-tag="vfx">VFX</button>
+        <button class="filter-tab" data-tag="ui">UI</button>
+      </div>
+
+      <select class="form-select sort-select" id="sortSelect">
+        <option value="stars">По звёздам</option>
+        <option value="updated">Последние</option>
+        <option value="forks">По форкам</option>
+        <option value="name">По имени</option>
+      </select>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row" id="statsRow" style="display:none">
+      <span class="stats-count">Найдено: <strong id="totalCount">0</strong></span>
+      <span class="stats-sep">·</span>
+      <span id="pageInfo">Страница 1</span>
+    </div>
+
+    <!-- Grid -->
+    <div class="patches-grid" id="patchesGrid">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination" style="display:none"></div>
+
+    <!-- Card Template -->
+    <!-- <a class="patch-card" href="#/compatch?o=Trimitor&amp;r=WDM-patch" target="_blank" style="animation-delay: 0s;">
+      <span class="card-badge-new">New</span>
+      <div class="card-top">
+        <div class="card-avatar"><img src="https://avatars.githubusercontent.com/u/73941033?v=4" alt="Trimitor"
+            loading="lazy"></div>
+        <div class="card-meta">
+          <div class="card-name" title="WDM-patch">WDM-patch</div>
+          <div class="card-author">
+            <div class="card-author-avatar">
+              <img src="https://avatars.githubusercontent.com/u/73941033?v=4" alt="" loading="lazy">
+            </div>
+            Trimitor
+          </div>
+        </div>
+      </div>
+      <div class="card-desc">Patch for WoW WotLK (3.3.5a) adding Classic &amp; TBC dungeon maps, with optional Caverns
+        and Mines expansion (microdungeons).</div>
+
+      <div class="card-footer">
+        <div class="card-stats">
+          <span class="card-stat"><span class="card-stat-icon"><i class="fa-solid fa-star"></i></span>62</span>
+          <span class="card-stat"><span class="card-stat-icon"><i class="fa-solid fa-code-fork"></i></span>15</span>
+          <span class="card-stat"><span class="card-stat-icon"><i class="fa-solid fa-eye"></i></span>62</span>
+        </div>
+        <span class="card-dl-btn" data-t="cps.moreinfo">More info</span>
+      </div>
+    </a> -->
+
+  </div>
+</section>
