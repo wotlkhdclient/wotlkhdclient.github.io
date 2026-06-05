@@ -54,5 +54,10 @@
     "info_banner": "The list is formed automatically through the |GitHub API|. Community patches are not checked by WoW HD Client — install them at your own risk.",
     "search": "Search...",
     "moreinfo": "More info"
+  },
+  "notfound": {
+    "title": "Page |lost| in Northrend",
+    "desc": "It looks like this path has been snowed in. The page does not exist or has been moved",
+    "btn_home": "Home"
   }
 }

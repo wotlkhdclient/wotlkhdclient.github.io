@@ -2221,3 +2221,280 @@ body {
   text-align: right;
   margin: 0;
 }
+
+/* =============================================================
+   notfound.css  —  Страница 404 (notfound.html)
+   Все селекторы с префиксом  .notfound-
+   body и main не трогаем — вся сцена живёт внутри .notfound-scene
+   ============================================================= */
+
+/* ─────────────────────────────────────────────
+   SCENE  — самодостаточный блок-обёртка
+   Заменяет <main> как визуальный контейнер.
+   Поведёт себя как обычный блочный элемент.
+───────────────────────────────────────────── */
+.notfound-scene {
+  position: relative;
+  min-height: calc(100vh - 60px); /* 60px = высота navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 0 120px;
+}
+
+/* ─────────────────────────────────────────────
+   BACKGROUNDS
+───────────────────────────────────────────── */
+.notfound-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.notfound-bg--deep {
+  background: linear-gradient(170deg, #04090f 0%, #071325 40%, #060d1c 100%);
+}
+
+.notfound-bg--radial {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -5%,  rgba(20,70,150,.40) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 30% at 15% 60%,  rgba(50,20,100,.18) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 25% at 85% 70%,  rgba(10,50,120,.14) 0%, transparent 50%);
+}
+
+.notfound-bg--bottom {
+  background: radial-gradient(ellipse 50% 40% at 50% 110%, rgba(10,30,80,.50) 0%, transparent 65%);
+}
+
+/* ─────────────────────────────────────────────
+   STARS
+───────────────────────────────────────────── */
+.notfound-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.notfound-star {
+  position: absolute;
+  border-radius: 50%;
+  background: #b8d4f0;
+  opacity: 0;
+  animation: nf-star-blink 3s ease infinite;
+}
+
+@keyframes nf-star-blink {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: .65; }
+}
+
+/* ─────────────────────────────────────────────
+   SNOW
+───────────────────────────────────────────── */
+.notfound-snow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.notfound-flake {
+  position: absolute;
+  top: -8px;
+  border-radius: 50%;
+  background: rgba(210, 235, 255, .60);
+  animation: nf-snow-fall linear infinite;
+}
+
+@keyframes nf-snow-fall {
+  0%   { transform: translateY(0) translateX(0);                        opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: .45; }
+  100% { transform: translateY(110%) translateX(var(--dx, 30px));       opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────
+   MOUNTAIN SILHOUETTES
+───────────────────────────────────────────── */
+.notfound-mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.notfound-mountains svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────
+   RUNE LINE
+───────────────────────────────────────────── */
+.notfound-rune {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 90%);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(100,160,220,.22) 20%,
+    rgba(140,200,245,.45) 50%,
+    rgba(100,160,220,.22) 80%,
+    transparent
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ─────────────────────────────────────────────
+   CONTENT
+───────────────────────────────────────────── */
+.notfound-content {
+  position: relative;
+  z-index: 10;
+  max-width: 680px;
+  width: 100%;
+}
+
+.notfound-eyebrow {
+  font-family: var(--wh-font-display);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(140,200,245,.60);
+  margin: 0 0 20px;
+  animation: nf-fade-up .7s ease both;
+}
+
+.notfound-number {
+  font-family: var(--wh-font-display);
+  font-size: clamp(80px, 16vw, 130px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -6px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(100,170,230,.40);
+  position: relative;
+  margin: 0 0 4px;
+  animation: nf-fade-up .7s ease .1s both;
+}
+
+.notfound-number > span {
+  position: relative;
+  display: inline-block;
+}
+
+.notfound-number > span::after {
+  content: '404';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0c8f0;
+  -webkit-text-stroke: 0;
+  opacity: .07;
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.notfound-icon {
+  font-size: 30px;
+  color: rgba(140,200,245,.55);
+  margin: 0 0 20px;
+  display: block;
+  animation: nf-sword-float 4s ease-in-out infinite, nf-fade-up .7s ease .2s both;
+  filter: drop-shadow(0 0 14px rgba(80,150,240,.25));
+}
+
+@keyframes nf-sword-float {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%       { transform: translateY(-9px) rotate(4deg); }
+}
+
+.notfound-title {
+  font-family: var(--wh-font-display);
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 600;
+  color: var(--wh-text);
+  line-height: 1.25;
+  letter-spacing: -.3px;
+  margin: 0 0 16px;
+  animation: nf-fade-up .7s ease .25s both;
+}
+
+.notfound-title em {
+  font-style: normal;
+  color: var(--wh-gold);
+}
+
+.notfound-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--wh-text-muted);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.75;
+  animation: nf-fade-up .7s ease .35s both;
+}
+
+.notfound-actions {
+  animation: nf-fade-up .7s ease .45s both;
+}
+
+.notfound-hint-wrap {
+  margin-top: 36px;
+  animation: nf-fade-up .7s ease .55s both;
+}
+
+.notfound-hint-line {
+  width: 32px;
+  height: 1px;
+  background: rgba(100,150,200,.20);
+  margin: 0 auto 16px;
+}
+
+.notfound-hint {
+  font-size: 12px;
+  letter-spacing: .4px;
+  color: rgba(140,175,215,.50);
+  margin: 0;
+}
+
+.notfound-hint-link {
+  color: rgba(140,200,245,.65);
+  text-decoration: none;
+  transition: color .18s;
+}
+
+.notfound-hint-link:hover { color: var(--wh-blue); }
+
+/* ─────────────────────────────────────────────
+   ENTRANCE ANIMATION
+───────────────────────────────────────────── */
+@keyframes nf-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 575.98px) {
+  .notfound-scene    { padding: 60px 0 100px; }
+  .notfound-number   { letter-spacing: -3px; }
+  .notfound-desc     { font-size: 15px; }
+  .notfound-mountains { height: 160px; }
+}

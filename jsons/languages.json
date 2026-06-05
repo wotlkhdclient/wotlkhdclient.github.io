@@ -1,5 +1,4 @@
 [
     { "code": "EN", "flag": "🇺🇸", "name": "English" },
-    { "code": "RU", "flag": "🇷🇺", "name": "Русский" },
-    { "code": "DE", "flag": "🇩🇪", "name": "Deutsch" }
+    { "code": "RU", "flag": "🇷🇺", "name": "Русский" }
 ]

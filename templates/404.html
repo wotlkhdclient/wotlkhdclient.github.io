@@ -1,12 +1,63 @@
-<div class="container text-center py-3">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1 class="display-1 text-danger">404</h1>
-      <p class="lead mb-4">{{t.notfound_message}}</p>
-      <img src="https://cataas.com/cat/says/404" 
-           class="img-fluid rounded shadow" 
-           style="max-width: 400px;" 
-           alt="A cat saying 404 - page not found">
+<div class="notfound-scene">
+
+  <!-- Layered backgrounds -->
+  <div class="notfound-bg notfound-bg--deep" aria-hidden="true"></div>
+  <div class="notfound-bg notfound-bg--radial" aria-hidden="true"></div>
+  <div class="notfound-bg notfound-bg--bottom" aria-hidden="true"></div>
+
+  <!-- Stars -->
+  <div class="notfound-stars" id="nfStars" aria-hidden="true"></div>
+
+  <!-- Falling snow particles -->
+  <div class="notfound-snow" id="nfSnow" aria-hidden="true"></div>
+
+  <!-- Mountain silhouettes -->
+  <div class="notfound-mountains" aria-hidden="true">
+    <svg viewBox="0 0 680 140" preserveAspectRatio="none" aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,140 120,40 200,90 300,10 380,70 460,30 560,80 680,35 680,140" fill="#07101e"></polygon>
+      <polygon points="120,40 140,55 160,42 180,60 200,90 160,140 80,140" fill="#091422" opacity=".8"></polygon>
+      <polygon points="300,10 320,30 340,18 360,38 380,70 320,140 240,140" fill="#091422" opacity=".8"></polygon>
+      <polygon points="460,30 480,48 500,36 520,52 560,80 500,140 420,140" fill="#091422" opacity=".8"></polygon>
+      <polygon
+        points="120,40 200,90 300,10 380,70 460,30 560,80 680,35 680,70 560,100 460,55 380,90 300,35 200,108 120,65 60,100 0,80 0,60 60,70"
+        fill="#0d1e36" opacity=".5"></polygon>
+      <line x1="295" y1="15" x2="315" y2="30" stroke="rgba(200,230,255,.12)" stroke-width="1"></line>
+      <line x1="455" y1="33" x2="475" y2="48" stroke="rgba(200,230,255,.10)" stroke-width="1"></line>
+    </svg>
+  </div>
+
+  <!-- Horizontal rune line -->
+  <div class="notfound-rune" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="container-xl px-4">
+    <div class="notfound-content text-center mx-auto">
+
+      <!-- Eyebrow -->
+      <p class="notfound-eyebrow">WotLK HD Client · 3.3.5a</p>
+
+      <!-- Giant number -->
+      <div class="notfound-number">
+        <span aria-hidden="true">404</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="notfound-title" data-t="notfound.title">
+        Page <em>lost</em> in Northrend
+      </h1>
+
+      <!-- Description -->
+      <p class="notfound-desc" data-t="notfound.desc">
+        It looks like this path has been snowed in. The page does not exist or has been moved
+      </p>
+
+      <!-- Actions -->
+      <div class="notfound-actions d-flex gap-3 justify-content-center flex-wrap">
+        <a href="/" class="wh-btn-primary" data-t="notfound.btn_home">
+          Home
+        </a>
+      </div>
     </div>
   </div>
 </div>
