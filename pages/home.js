@@ -1,6 +1,15 @@
+import { setMeta, setCanonical } from '../assets/js/engine.js';
+
 export default async function ({ template, t }) {
   document.querySelector('title').setAttribute('data-t', 'home_title');
   document.title = t.home_title;
+
+  setMeta('description', 'WotLK HD Client is a free graphics modification for World of Warcraft 3.3.5a. Enhanced textures, lighting, shadows, and visual effects for Wrath of the Lich King.');
+  setMeta('og:title', 'WotLK HD Client - HD Graphics Mod for WoW 3.3.5a', 'property');
+  setMeta('og:description', 'Free graphics modification for WoW 3.3.5a. Enhanced textures, lighting, shadows, and visual effects.', 'property');
+  setMeta('og:url', 'https://wotlkhdclient.github.io/', 'property');
+  setCanonical('/');
+
   return Mustache.render(template, { t });
 }
 

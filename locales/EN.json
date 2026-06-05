@@ -42,7 +42,9 @@
     "hero_title": "Download |HD Client|",
     "hero_desc": "Choose a version and a convenient way to download.",
     "changelog": "Changelog",
-    "changelog_title": "Changelog"
+    "changelog_title": "Changelog",
+    "stable_desc": "Recommended for most users. A stable, tested version with no known critical bugs.",
+    "beta_desc": "Version for testers and enthusiasts. Includes patches currently under development and experimental improvements."
   },
   "cps": {
     "hero_title": "|Community| Patches",

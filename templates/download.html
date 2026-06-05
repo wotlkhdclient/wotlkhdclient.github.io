@@ -7,8 +7,8 @@
   <div class="container-xl px-4">
     <div class="wh-page-hero__content">
       <p class="wh-page-eyebrow">WotLK HD Client · 3.3.5a</p>
-      <h1 class="wh-page-title">Скачать <em>HD Client</em></h1>
-      <p class="wh-page-desc">Выберите версию и удобный способ загрузки.</p>
+      <h1 class="wh-page-title" data-t="download.hero_title">{{ t.download.hero_title }}</h1>
+      <p class="wh-page-desc" data-t="download.hero_desc">{{ t.download.hero_desc }}</p>
 
       <!-- Version switcher -->
       <div class="download-ver-switch-wrap">
@@ -45,11 +45,10 @@
             <div class="download-info-card__glow download-info-card__glow--stable" aria-hidden="true"></div>
             <div class="download-info-card__name download-info-card__name--stable">
               Stable
-              <span class="download-ver-tag download-ver-tag--stable">v2.5.0</span>
+              <span class="download-ver-tag download-ver-tag--stable">-</span>
             </div>
-            <p class="download-info-card__sub">
-              Рекомендуется для большинства пользователей. Стабильная, протестированная версия без известных критических
-              ошибок.
+            <p class="download-info-card__sub" data-t="download.stable_desc">
+              {{ t.download.stable_desc }}
             </p>
             <div class="row g-3 mt-1">
               <div class="col-6">
@@ -202,10 +201,10 @@
             <div class="download-info-card__glow download-info-card__glow--beta" aria-hidden="true"></div>
             <div class="download-info-card__name download-info-card__name--beta">
               Beta
-              <span class="download-ver-tag download-ver-tag--beta">v2.6.0-β</span>
+              <span class="download-ver-tag download-ver-tag--beta">-</span>
             </div>
-            <p class="download-info-card__sub">
-              Версия для тестировщиков и энтузиастов. Включает патчи в разработке и экспериментальные улучшения.
+            <p class="download-info-card__sub" data-t="download.beta_desc">
+              {{ t.download.beta_desc }}
             </p>
             <div class="row g-3 mt-1">
               <div class="col-6">
