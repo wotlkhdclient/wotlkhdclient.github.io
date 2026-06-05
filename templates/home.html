@@ -1,0 +1,535 @@
+<section class="home-hero">
+  <!-- Backgrounds -->
+  <div class="home-hero__bg-base" aria-hidden="true"></div>
+  <div class="home-hero__bg-radial" aria-hidden="true"></div>
+  <div class="home-hero__bg-frost" aria-hidden="true"></div>
+  <!-- Video background -->
+  <div class="home-hero__video" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/lk.webm" type="video/webm">
+    </video>
+    <div class="home-hero__video-overlay"></div>
+  </div>
+
+  <!-- Particles -->
+  <div class="home-hero__particles" aria-hidden="true">
+    <span class="home-hero__particle" style="left:10%;--dur:9s;--delay:0s;--dx:20px"></span>
+    <span class="home-hero__particle" style="left:22%;--dur:12s;--delay:1.5s;--dx:-15px"></span>
+    <span class="home-hero__particle" style="left:38%;--dur:8s;--delay:0.8s;--dx:30px"></span>
+    <span class="home-hero__particle" style="left:55%;--dur:11s;--delay:2s;--dx:-25px"></span>
+    <span class="home-hero__particle" style="left:70%;--dur:10s;--delay:0.3s;--dx:18px"></span>
+    <span class="home-hero__particle" style="left:85%;--dur:7s;--delay:1.2s;--dx:-10px"></span>
+  </div>
+
+  <!-- Rune line decoration -->
+  <div class="home-hero__rune-line" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <div class="container-xl px-4 position-relative" style="z-index:2">
+    <div class="home-hero__content text-center mx-auto">
+
+      <p class="home-hero__eyebrow">WotLK HD Client · 3.3.5a</p>
+
+      <h1 class="home-hero__title">
+        <span class="home-hero__title-line1" data-t="index.title_line1">{{ t.index.title_line1 }}</span>
+        <span class="home-hero__title-line2" data-t="index.title_line2">{{ t.index.title_line2 }}</span>
+      </h1>
+
+      <p class="home-hero__desc" data-t="index.hero_desc">
+        {{ t.index.hero_desc }}
+      </p>
+
+      <div class="home-hero__actions d-flex flex-wrap gap-3 justify-content-center">
+        <a href="#" class="wh-btn-primary">
+          <i class="fa-solid fa-download"></i>
+          <span>Download Client</span>
+        </a>
+        <a href="#" class="wh-btn-secondary">
+          <i class="fa-solid fa-images"></i>
+          View Gallery
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="home-hero__stats mx-auto mt-5">
+      <div class="home-hero__stat">
+        <div class="home-hero__stat-num">4K</div>
+        <div class="home-hero__stat-label">Textures</div>
+      </div>
+      <div class="home-hero__stat">
+        <div class="home-hero__stat-num">500+</div>
+        <div class="home-hero__stat-label">HD Models</div>
+      </div>
+      <div class="home-hero__stat">
+        <div class="home-hero__stat-num">120K+</div>
+        <div class="home-hero__stat-label">Downloads</div>
+      </div>
+      <div class="home-hero__stat">
+        <div class="home-hero__stat-num">Free</div>
+        <div class="home-hero__stat-label">Forever</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="home-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4">
+    <span>Scroll</span>
+    <div class="home-hero__scroll-arrow"></div>
+  </div>
+</section>
+
+<div class="wh-divider-line"></div>
+
+
+<section class="home-comparison py-section">
+  <div class="container-xl px-4">
+    <div class="row align-items-end g-4">
+      <div class="col-lg-6 reveal">
+        <p class="wh-section-label">Visual Upgrade</p>
+        <h2 class="wh-section-title">See the <em>Difference</em></h2>
+        <p class="wh-section-lead">
+          Drag the slider to compare original WotLK client visuals against the HD remaster.
+          Every texture hand-curated for authenticity.
+        </p>
+      </div>
+    </div>
+    <div class="home-comparison__wrap mt-4 reveal" id="comparisonWrap">
+      <!-- <div class="home-comparison__slide active" data-index="0">
+        <div class="home-comparison__before">
+          <div class="home-comparison__ph home-comparison__ph--before">
+            <div class="ph-pixels">
+              <span class="ph-px" style="display:block"
+                *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]"></span>
+            </div>
+            <span class="ph-label">Original</span>
+            <span class="ph-sub">3.3.5a Client</span>
+          </div>
+        </div>
+        <div class="home-comparison__after">
+          <div class="home-comparison__ph home-comparison__ph--after">
+            <div class="ph-hd-grid">
+              <div class="ph-hd-glow ph-hd-glow1"></div>
+              <div class="ph-hd-glow ph-hd-glow2"></div>
+              <div class="ph-hd-lines">
+                <div class="ph-hd-line" style="top:20%"></div>
+                <div class="ph-hd-line" style="top:40%"></div>
+                <div class="ph-hd-line" style="top:60%"></div>
+                <div class="ph-hd-line" style="top:80%"></div>
+              </div>
+            </div>
+            <span class="ph-label">HD Remaster</span>
+            <span class="ph-sub">4K Enhanced</span>
+          </div>
+        </div>
+        <div class="home-comparison__divider" id="compDivider">
+          <div class="home-comparison__handle">
+            <i class="fa-solid fa-arrows-left-right"></i>
+          </div>
+        </div>
+        <span class="home-comparison__label home-comparison__label--before">Before</span>
+        <span class="home-comparison__label home-comparison__label--after">After</span>
+      </div> -->
+
+      <div class="img-comp-container">
+        <div class="img-comp-img">
+          <img src="assets/images/charactercreation_o.png" width="1600" height="900">
+        </div>
+        <div class="img-comp-img img-comp-overlay">
+          <img src="assets/images/charactercreation_h.png" width="1600" height="900">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center gap-3 mt-4">
+      <button class="home-comparison__nav-btn" id="compPrev" aria-label="Previous">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="d-flex gap-2" id="compDots">
+        <button class="home-comparison__dot active" data-idx="0"></button>
+        <button class="home-comparison__dot" data-idx="1"></button>
+        <button class="home-comparison__dot" data-idx="2"></button>
+      </div>
+      <button class="home-comparison__nav-btn" id="compNext" aria-label="Next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="wh-divider-line"></div>
+
+<section class="home-features py-section">
+  <div class="container-xl px-4">
+    <div class="text-center reveal">
+      <p class="wh-section-label">What's Included</p>
+      <h2 class="wh-section-title">Everything You <em>Need</em></h2>
+      <p class="wh-section-lead mx-auto">
+        A complete HD overhaul built by the community, for the community.
+      </p>
+    </div>
+
+    <div class="home-features__grid mt-5">
+
+      <article class="home-features__card reveal reveal-delay-1">
+        <div class="home-features__card-glow glow-blue" aria-hidden="true"></div>
+        <div class="home-features__icon icon-blue">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <h3 class="home-features__title">HD Textures</h3>
+        <p class="home-features__desc">
+          Over 10,000 remastered textures at up to 4K resolution. Terrain, buildings,
+          characters and UI — all upscaled with AI and hand-corrected.
+        </p>
+      </article>
+
+      <article class="home-features__card reveal reveal-delay-2">
+        <div class="home-features__card-glow glow-gold" aria-hidden="true"></div>
+        <div class="home-features__icon icon-gold">
+          <i class="fa-solid fa-cube"></i>
+        </div>
+        <h3 class="home-features__title">Remastered Models</h3>
+        <p class="home-features__desc">
+          Character and creature models rebuilt with higher polygon counts while preserving
+          the iconic WotLK art direction you love.
+        </p>
+      </article>
+
+      <article class="home-features__card reveal reveal-delay-3">
+        <div class="home-features__card-glow glow-green" aria-hidden="true"></div>
+        <div class="home-features__icon icon-green">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <h3 class="home-features__title">Spell Effects</h3>
+        <p class="home-features__desc">
+          Revamped particle systems and visual effects for hundreds of spells.
+          Frost, fire, arcane — all with enhanced clarity and impact.
+        </p>
+      </article>
+
+      <article class="home-features__card reveal reveal-delay-1">
+        <div class="home-features__card-glow glow-violet" aria-hidden="true"></div>
+        <div class="home-features__icon icon-violet">
+          <i class="fa-solid fa-music"></i>
+        </div>
+        <h3 class="home-features__title">Ambient Audio</h3>
+        <p class="home-features__desc">
+          Remastered ambient soundscapes and environmental audio to complement
+          the new visual fidelity across all zones.
+        </p>
+      </article>
+
+      <article class="home-features__card reveal reveal-delay-2">
+        <div class="home-features__card-glow glow-cyan" aria-hidden="true"></div>
+        <div class="home-features__icon icon-cyan">
+          <i class="fa-solid fa-sliders"></i>
+        </div>
+        <h3 class="home-features__title">Patch Builder</h3>
+        <p class="home-features__desc">
+          Customise exactly which patches you install. Pick only the content
+          categories you want with our granular patch builder tool.
+        </p>
+      </article>
+
+      <article class="home-features__card reveal reveal-delay-3">
+        <div class="home-features__card-glow glow-rose" aria-hidden="true"></div>
+        <div class="home-features__icon icon-rose">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="home-features__title">Safe & Clean</h3>
+        <p class="home-features__desc">
+          Client-side only. No server interaction, no account risks. Fully
+          reversible — restore your original client in one click.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="wh-divider-line"></div>
+
+<section class="home-patches py-section">
+  <div class="container-xl px-4">
+    <div class="row align-items-end g-4 mb-5">
+      <div class="col-md-8 reveal">
+        <p class="wh-section-label">Latest Releases</p>
+        <h2 class="wh-section-title">Featured <em>Patches</em></h2>
+        <p class="wh-section-lead">Fresh from the workshop — our most downloaded packs this month.</p>
+      </div>
+      <div class="col-md-4 text-md-end reveal reveal-delay-1">
+        <a href="#" class="wh-btn-secondary btn-sm">View All Patches</a>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 reveal reveal-delay-1">
+        <article class="home-patch-card">
+          <div class="home-patch-card__thumb home-patch-card__thumb--blue">
+            <div class="home-patch-card__thumb-glow ptg1" aria-hidden="true"></div>
+            <div class="home-patch-card__thumb-art">
+              <span class="home-patch-card__thumb-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+              <span class="home-patch-card__thumb-tag">Textures</span>
+            </div>
+          </div>
+          <div class="home-patch-card__body">
+            <h3 class="home-patch-card__title">Northrend Terrain HD</h3>
+            <p class="home-patch-card__desc">
+              Complete terrain texture overhaul for all Northrend zones. Snow, ice, rock and
+              tundra brought to 4K resolution with accurate colour grading.
+            </p>
+            <div class="home-patch-card__meta">
+              <span class="home-patch-card__size"><i class="fa-solid fa-floppy-disk me-1"></i>1.2 GB</span>
+              <span class="home-patch-card__ver">v2.4.1</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 reveal reveal-delay-2">
+        <article class="home-patch-card">
+          <div class="home-patch-card__thumb home-patch-card__thumb--gold">
+            <div class="home-patch-card__thumb-glow ptg2" aria-hidden="true"></div>
+            <div class="home-patch-card__thumb-art">
+              <span class="home-patch-card__thumb-icon"><i class="fa-solid fa-person-running"></i></span>
+              <span class="home-patch-card__thumb-tag home-patch-card__thumb-tag--gold">Models</span>
+            </div>
+          </div>
+          <div class="home-patch-card__body">
+            <h3 class="home-patch-card__title">Character Model Pack</h3>
+            <p class="home-patch-card__desc">
+              All playable races with increased polygon counts and improved rigging.
+              Compatible with all races and their customisation options.
+            </p>
+            <div class="home-patch-card__meta">
+              <span class="home-patch-card__size"><i class="fa-solid fa-floppy-disk me-1"></i>890 MB</span>
+              <span class="home-patch-card__ver">v1.9.0</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 reveal reveal-delay-1">
+        <article class="home-patch-card">
+          <div class="home-patch-card__thumb home-patch-card__thumb--green">
+            <div class="home-patch-card__thumb-glow ptg3" aria-hidden="true"></div>
+            <div class="home-patch-card__thumb-art">
+              <span class="home-patch-card__thumb-icon"><i class="fa-solid fa-wand-sparkles"></i></span>
+              <span class="home-patch-card__thumb-tag home-patch-card__thumb-tag--green">Spells</span>
+            </div>
+          </div>
+          <div class="home-patch-card__body">
+            <h3 class="home-patch-card__title">Spell FX Overhaul</h3>
+            <p class="home-patch-card__desc">
+              600+ spell effects reworked with new particles and shaders. Retains
+              the original colour palette while dramatically increasing visual clarity.
+            </p>
+            <div class="home-patch-card__meta">
+              <span class="home-patch-card__size"><i class="fa-solid fa-floppy-disk me-1"></i>340 MB</span>
+              <span class="home-patch-card__ver">v3.1.2</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 reveal reveal-delay-2">
+        <article class="home-patch-card">
+          <div class="home-patch-card__thumb home-patch-card__thumb--violet">
+            <div class="home-patch-card__thumb-glow ptg4" aria-hidden="true"></div>
+            <div class="home-patch-card__thumb-art">
+              <span class="home-patch-card__thumb-icon"><i class="fa-solid fa-city"></i></span>
+              <span class="home-patch-card__thumb-tag home-patch-card__thumb-tag--violet">Environment</span>
+            </div>
+          </div>
+          <div class="home-patch-card__body">
+            <h3 class="home-patch-card__title">Dalaran City Rework</h3>
+            <p class="home-patch-card__desc">
+              Full building and prop retexture for the floating city of Dalaran.
+              Includes remastered banners, cobblestones and interiors.
+            </p>
+            <div class="home-patch-card__meta">
+              <span class="home-patch-card__size"><i class="fa-solid fa-floppy-disk me-1"></i>520 MB</span>
+              <span class="home-patch-card__ver">v1.3.0</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="#" class="wh-btn-secondary">
+        <i class="fa-solid fa-grid-2 me-2"></i>Browse All Patches
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="wh-divider-line"></div>
+
+<section class="home-gallery py-section">
+  <div class="container-xl px-4">
+    <div class="text-center reveal mb-0">
+      <p class="wh-section-label">Showcase</p>
+      <h2 class="wh-section-title">Screenshot <em>Gallery</em></h2>
+    </div>
+  </div>
+  <div class="home-gallery__track-wrap mt-4">
+    <div class="home-gallery__fade home-gallery__fade--left" aria-hidden="true"></div>
+    <div class="home-gallery__fade home-gallery__fade--right" aria-hidden="true"></div>
+    <div class="home-gallery__track" id="galleryTrack">
+      <!-- Items duplicated for seamless scroll -->
+      <div class="home-gallery__thumb"><i class="fa-solid fa-mountain"></i><span>Icecrown</span><span
+          class="home-gallery__thumb-num">01</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-snowflake"></i><span>Storm Peaks</span><span
+          class="home-gallery__thumb-num">02</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-skull"></i><span>Naxxramas</span><span
+          class="home-gallery__thumb-num">03</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-city"></i><span>Dalaran</span><span
+          class="home-gallery__thumb-num">04</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-dragon"></i><span>The Nexus</span><span
+          class="home-gallery__thumb-num">05</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-water"></i><span>Borean Tundra</span><span
+          class="home-gallery__thumb-num">06</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-tree"></i><span>Grizzly Hills</span><span
+          class="home-gallery__thumb-num">07</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-chess-rook"></i><span>Ulduar</span><span
+          class="home-gallery__thumb-num">08</span></div>
+      <!-- duplicates -->
+      <div class="home-gallery__thumb"><i class="fa-solid fa-mountain"></i><span>Icecrown</span><span
+          class="home-gallery__thumb-num">01</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-snowflake"></i><span>Storm Peaks</span><span
+          class="home-gallery__thumb-num">02</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-skull"></i><span>Naxxramas</span><span
+          class="home-gallery__thumb-num">03</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-city"></i><span>Dalaran</span><span
+          class="home-gallery__thumb-num">04</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-dragon"></i><span>The Nexus</span><span
+          class="home-gallery__thumb-num">05</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-water"></i><span>Borean Tundra</span><span
+          class="home-gallery__thumb-num">06</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-tree"></i><span>Grizzly Hills</span><span
+          class="home-gallery__thumb-num">07</span></div>
+      <div class="home-gallery__thumb"><i class="fa-solid fa-chess-rook"></i><span>Ulduar</span><span
+          class="home-gallery__thumb-num">08</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="home-news py-section">
+  <div class="container-xl px-4">
+
+    <div class="row align-items-end g-4 mb-4">
+      <div class="col-md-8 reveal">
+        <p class="wh-section-label">Updates</p>
+        <h2 class="wh-section-title">Latest <em>News</em></h2>
+      </div>
+      <div class="col-md-4 text-md-end reveal reveal-delay-1">
+        <a href="#" class="wh-btn-secondary btn-sm">All News</a>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Featured article -->
+      <div class="col-lg-7 reveal">
+        <article class="home-news-main">
+          <div class="home-news-main__thumb">
+            <i class="fa-solid fa-newspaper ncm-ph-icon"></i>
+            <span class="ncm-ph-label">Featured Post</span>
+          </div>
+          <div class="home-news-main__body">
+            <span class="wh-news-tag tag-patch">Patch</span>
+            <h3 class="home-news-main__title">Spell FX Overhaul v3.1.2 Released</h3>
+            <p class="home-news-main__excerpt">
+              After months of community feedback and development, the largest spell effects
+              update yet is live. Over 600 spells have been reworked with new particle
+              systems, improved shaders and better visual clarity at all resolutions.
+            </p>
+            <div class="home-news-main__meta">
+              <span><i class="fa-regular fa-calendar me-1"></i>May 28, 2026</span>
+              <span><i class="fa-regular fa-clock me-1"></i>5 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Side news list -->
+      <div class="col-lg-5 reveal reveal-delay-1">
+        <div class="d-flex flex-column gap-3">
+
+          <article class="home-news-item">
+            <span class="wh-news-tag tag-event">Event</span>
+            <h4 class="home-news-item__title">Summer Screenshot Contest</h4>
+            <p class="home-news-item__meta">
+              <span><i class="fa-regular fa-calendar me-1"></i>May 20, 2026</span>
+            </p>
+          </article>
+
+          <article class="home-news-item">
+            <span class="wh-news-tag tag-news">Milestone</span>
+            <h4 class="home-news-item__title">120,000 Downloads Reached</h4>
+            <p class="home-news-item__meta">
+              <span><i class="fa-regular fa-calendar me-1"></i>May 15, 2026</span>
+            </p>
+          </article>
+
+          <article class="home-news-item">
+            <span class="wh-news-tag tag-update">Update</span>
+            <h4 class="home-news-item__title">Dalaran City Rework v1.3.0</h4>
+            <p class="home-news-item__meta">
+              <span><i class="fa-regular fa-calendar me-1"></i>May 8, 2026</span>
+            </p>
+          </article>
+
+          <article class="home-news-item">
+            <span class="wh-news-tag tag-patch">Patch</span>
+            <h4 class="home-news-item__title">Terrain Pack Hotfix — Snow Normals</h4>
+            <p class="home-news-item__meta">
+              <span><i class="fa-regular fa-calendar me-1"></i>Apr 30, 2026</span>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wh-divider-line"></div>
+
+<section class="home-cta py-section">
+  <div class="home-cta__bg-glow" aria-hidden="true"></div>
+  <div class="container-xl px-4 position-relative" style="z-index:2">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7 reveal">
+        <p class="wh-section-label">Get Started</p>
+        <h2 class="home-cta__title">
+          Ready to <em>Upgrade</em><br>Your Adventure?
+        </h2>
+        <p class="home-cta__desc">
+          Download the HD Client installer, run the setup wizard and choose exactly
+          which enhancements you want. Takes less than 10 minutes.
+        </p>
+      </div>
+      <div class="col-lg-5 reveal reveal-delay-2">
+        <div class="d-flex flex-column align-items-stretch align-items-lg-start gap-3">
+          <a href="#" class="home-cta__dl-btn w-100 justify-content-center">
+            <i class="fa-solid fa-download fa-lg"></i>
+            <span>
+              <strong>Download Free</strong><br>
+            </span>
+          </a>
+          <a href="#" class="wh-btn-secondary w-100 justify-content-center">
+            <i class="fa-solid fa-hammer me-2"></i>
+            Custom Patch Builder
+          </a>
+          <p class="home-cta__note">
+            <i class="fa-solid fa-circle-check me-1" style="color:var(--wh-green)"></i>
+            No account required &nbsp;·&nbsp; 100% free &nbsp;·&nbsp; Open source
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

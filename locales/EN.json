@@ -1,0 +1,58 @@
+{
+  "home_title": "Home Page | WotLK HD Client",
+  "notfound_title": "404 Not Found | WotLK HD Client",
+  "pb_title": "Patch Builder | WotLK HD Client",
+  "compatches_title": "Community Patches | WotLK HD Client",
+  "patches_title": "Patches | WotLK HD Client",
+  "nav": {
+    "home": "Home",
+    "patches": "Patches",
+    "community_patches": "Community Patches",
+    "download": "Download",
+    "patchbuilder": "Patch Builder",
+    "discord": "Discord"
+  },
+  "index": {
+    "title_line1": "The WotLK world you love",
+    "title_line2": "Now with a completely new look",
+    "hero_desc": "Graphical enhancements for the original 3.3.5a client: updated textures, remastered visual effects, and enhanced creature and weapon models. The world you know — like never before.",
+    "btn_download": "Download HD Client",
+    "btn_patchbuilder": "Online Patch Builder",
+    "hero_stat_label1": "Client version",
+    "hero_stat_label2": "Modifications",
+    "hero_stat_label3": "Community Members",
+    "hero_stat_label4": "Years Active",
+    "hero_scroll": "Scroll Down",
+    "comparison_label": "Visual Comparison",
+    "comparison_title": "Feel the |Difference|",
+    "comparison_lead": "Drag the divider to compare the original and enhanced graphics in different locations.",
+    "comparison_label_before": "Default Client",
+    "comparison_label_after": "WotLK HD Client"
+  },
+  "footer": {
+    "note1": "WotLK HD Client - Non-commercial project · Not affiliated with Blizzard Entertainment",
+    "note2": "World of Warcraft® is a trademark of Blizzard Entertainment"
+  },
+  "patches": {
+    "hero_title": "Patch |Descriptions|",
+    "hero_desc": "Below are the patches added to HD Client. With a detailed description and images."
+  },
+  "download": {
+    "hero_title": "Download |HD Client|",
+    "hero_desc": "Choose a version and a convenient way to download.",
+    "changelog": "Changelog",
+    "changelog_title": "Changelog"
+  },
+  "cps": {
+    "hero_title": "|Community| Patches",
+    "hero_desc": "Patches from our community.",
+    "makepatch_btn": "Make a patch",
+    "allrepos_btn": "All repositories",
+    "howto_step1": "Create a repository on GitHub",
+    "howto_step2": "Add topic 'wotlkhdclient'",
+    "howto_step3": "Your patch will appear here",
+    "info_banner": "The list is formed automatically through the |GitHub API|. Community patches are not checked by WoW HD Client — install them at your own risk.",
+    "search": "Search...",
+    "moreinfo": "More info"
+  }
+}
