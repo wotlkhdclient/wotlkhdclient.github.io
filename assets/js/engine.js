@@ -94,17 +94,18 @@ function renderLangDropdown(langs) {
   dd.innerHTML = '';
   langs.forEach((l, i) => {
     if (i === 2) {
-      const div = document.createElement('div');
-      div.className = 'lang-divider';
+      const div = document.createElement('li');
+      div.html = '<hr class="dropdown-divider wh-lang-divider">';
       dd.appendChild(div);
     }
-    const item = document.createElement('div');
-    item.className = 'lang-item' + (l.code === currentLang ? ' cur' : '');
+    const item = document.createElement('li');
     item.innerHTML = `
-      <span class="lang-flag">${l.flag}</span>
-      <span class="lang-name">${l.name}</span>
-      <span class="lang-code">${l.code.toUpperCase()}</span>
-      <span class="lang-check">${l.code === currentLang ? '✓' : ''}</span>
+      <button class="wh-lang-item ${currentLang === l.code ? 'active' : ''}">
+        <span class="wh-lang-flag">${l.flag}</span>
+        <span class="wh-lang-name">${l.name}</span>
+        <span class="wh-lang-code">${l.code.toUpperCase()}</span>
+        ${l.code === currentLang ? '<i class="fa-solid fa-check wh-lang-check ms-auto"></i>' : ''}
+      </button>
     `;
     item.onclick = () => {
       document.getElementById('navLang')?.classList.remove('open');
