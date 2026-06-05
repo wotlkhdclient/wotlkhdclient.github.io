@@ -162,8 +162,8 @@ function capitalize(str) {
 }
 
 function updateActiveLink(path) {
-  document.querySelectorAll('a.nav-link').forEach(el => el.classList.remove('active'));
-  document.querySelector(`a.nav-link[href="${path}"]`)?.classList.add('active');
+  document.querySelectorAll('a.wh-nav-link').forEach(el => el.classList.remove('active'));
+  document.querySelector(`a.wh-nav-link[href="${path}"]`)?.classList.add('active');
 }
 
 async function loadView(viewName, params = {}, query = {}, navigationId) {
