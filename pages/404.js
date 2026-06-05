@@ -1,6 +1,7 @@
 export default async function ({ template, t }) {
   document.querySelector('title').setAttribute('data-t', 'notfound_title');
   document.title = t.notfound_title;
+  return Mustache.render(template, { t });
 }
 
 export async function after({ params, query, t }) {

@@ -1,5 +1,6 @@
 export default async function ({ template, t }) {
-  document.title = `${t.home_title} | WotLK HD Client`;
+  document.querySelector('title').setAttribute('data-t', 'download_title');
+  document.title = t.download_title;
   return Mustache.render(template, { t });
 }
 

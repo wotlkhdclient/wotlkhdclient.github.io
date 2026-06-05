@@ -4,6 +4,7 @@
   "pb_title": "Патч-билдер | WotLK HD Client",
   "compatches_title": "Патчи сообщества | WotLK HD Client",
   "patches_title": "Патчи | WotLK HD Client",
+  "download_title": "Скачать HD Client | WotLK HD Client",
   "nav": {
     "home": "Главная",
     "patches": "Патчи",
@@ -58,6 +59,6 @@
   "notfound": {
     "title": "Страница |потеряна| в Нордсколе",
     "desc": "Похоже, этот путь занесло снегом. Страница не существует или была перемещена",
-    "btn_home": "Домой"
+    "btn_home": "На главную"
   }
 }

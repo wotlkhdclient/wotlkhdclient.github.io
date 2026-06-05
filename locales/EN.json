@@ -4,6 +4,7 @@
   "pb_title": "Patch Builder | WotLK HD Client",
   "compatches_title": "Community Patches | WotLK HD Client",
   "patches_title": "Patches | WotLK HD Client",
+  "download_title": "Download HD Client | WotLK HD Client",
   "nav": {
     "home": "Home",
     "patches": "Patches",
@@ -58,6 +59,6 @@
   "notfound": {
     "title": "Page |lost| in Northrend",
     "desc": "It looks like this path has been snowed in. The page does not exist or has been moved",
-    "btn_home": "Home"
+    "btn_home": "To the home page"
   }
 }
