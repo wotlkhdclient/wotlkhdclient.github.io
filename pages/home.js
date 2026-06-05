@@ -11,8 +11,8 @@ export async function after({ params, query, t }) {
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  await compSlider(t);
-  await gallery();
+  // await compSlider(t);
+  // await gallery();
 }
 
 async function compSlider(t) {
