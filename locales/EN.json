@@ -41,10 +41,12 @@
   "download": {
     "hero_title": "Download |HD Client|",
     "hero_desc": "Choose a version and a convenient way to download.",
-    "changelog": "Changelog",
+    "whatsnew": "What's new",
     "changelog_title": "Changelog",
     "stable_desc": "Recommended for most users. A stable, tested version with no known critical bugs.",
-    "beta_desc": "Version for testers and enthusiasts. Includes patches currently under development and experimental improvements."
+    "beta_desc": "Version for testers and enthusiasts. Includes patches currently under development and experimental improvements.",
+    "beta_warn": "The beta version includes new features and fixes that have not yet been included in the stable release. It may contain bugs, visual glitches, or incompatibilities. It is not recommended for primary use.",
+    "meta_label1": "Release date"
   },
   "cps": {
     "hero_title": "|Community| Patches",

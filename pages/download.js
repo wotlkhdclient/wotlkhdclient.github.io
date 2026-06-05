@@ -43,8 +43,10 @@ export async function after({ params, query, t }) {
     const panel = document.querySelector(`#panel-${d.name}`);
     const d_btn = document.querySelector(`#tag-${d.name}`);
     const d_tag = panel.querySelector('.download-ver-tag');
+    const release_date = panel.querySelector('#release-date');
     d_tag.textContent = `v${d.version}-${d.name}`;
     d_btn.textContent = `v${d.version}-${d.name}`;
+    release_date.textContent = new Date(d.version).toLocaleDateString();
     d.links.forEach((l, j) => {
       let link = panel.querySelector(`.src-${l.type}`);
       if (link) link.href = l.url;

@@ -53,26 +53,8 @@
             <div class="row g-3 mt-1">
               <div class="col-6">
                 <div class="download-meta-item">
-                  <div class="download-meta-label">Дата выпуска</div>
-                  <div class="download-meta-val">14 мая 2025</div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="download-meta-item">
-                  <div class="download-meta-label">Размер пакета</div>
-                  <div class="download-meta-val">4.8 ГБ</div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="download-meta-item">
-                  <div class="download-meta-label">Патчей включено</div>
-                  <div class="download-meta-val">118 / 124</div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="download-meta-item">
-                  <div class="download-meta-label">Клиент</div>
-                  <div class="download-meta-val">WoW 3.3.5a</div>
+                  <div class="download-meta-label" data-t="download.meta_label1">{{ t.download.meta_label1 }}</div>
+                  <div class="download-meta-val" id="release-date"></div>
                 </div>
               </div>
             </div>
@@ -82,7 +64,7 @@
         <!-- Changelog -->
         <div class="col-lg-6">
           <div class="download-changelog" data-modal-open="modal-example">
-            <div class="download-changelog__title">Что нового:</div>
+            <div class="download-changelog__title" data-t="download.whatsnew">{{ t.download.whatsnew }}</div>
             <ul class="download-cl-list">
               <li class="download-cl-item">
                 <span class="download-cl-dot download-cl-dot--add"></span>
@@ -186,10 +168,8 @@
         <div class="download-beta-warning__icon">
           <i class="fa-solid fa-triangle-exclamation"></i>
         </div>
-        <p class="download-beta-warning__text">
-          <strong>Бета-версия.</strong> Содержит новые функции и патчи, которые ещё не вошли в Stable. Может содержать
-          ошибки, визуальные артефакты или несовместимости. Не рекомендуется для основного использования. Если что-то
-          пошло не так — всегда можно вернуться на Stable.
+        <p class="download-beta-warning__text" data-t="download.beta_warn">
+          {{ t.download.beta_warn }}
         </p>
       </div>
 
@@ -209,26 +189,8 @@
             <div class="row g-3 mt-1">
               <div class="col-6">
                 <div class="download-meta-item">
-                  <div class="download-meta-label">Дата сборки</div>
-                  <div class="download-meta-val">3 июня 2025</div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="download-meta-item">
-                  <div class="download-meta-label">Размер пакета</div>
-                  <div class="download-meta-val">5.3 ГБ</div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="download-meta-item">
-                  <div class="download-meta-label">Патчей включено</div>
-                  <div class="download-meta-val">124 / 124</div>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="download-meta-item">
-                  <div class="download-meta-label">Статус</div>
-                  <div class="download-meta-val download-meta-val--beta">В тестировании</div>
+                  <div class="download-meta-label" data-t="download.meta_label1">{{ t.download.meta_label1 }}</div>
+                  <div class="download-meta-val" id="release-date"></div>
                 </div>
               </div>
             </div>
@@ -237,7 +199,7 @@
 
         <div class="col-lg-6">
           <div class="download-changelog">
-            <div class="download-changelog__title">Что нового:</div>
+            <div class="download-changelog__title" data-t="download.whatsnew">{{ t.download.whatsnew }}</div>
             <ul class="download-cl-list">
               <li class="download-cl-item">
                 <span class="download-cl-dot download-cl-dot--add"></span>
