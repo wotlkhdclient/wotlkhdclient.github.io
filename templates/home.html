@@ -40,13 +40,13 @@
       </p>
 
       <div class="home-hero__actions d-flex flex-wrap gap-3 justify-content-center">
-        <a href="#" class="wh-btn-primary">
+        <a href="/download" class="wh-btn-primary">
           <i class="fa-solid fa-download"></i>
-          <span>Download Client</span>
+          <span data-t="index.btn_download">{{ t.index.btn_download }}</span>
         </a>
-        <a href="#" class="wh-btn-secondary">
-          <i class="fa-solid fa-images"></i>
-          View Gallery
+        <a href="/pb" class="wh-btn-secondary">
+          <i class="fa-solid fa-cog"></i>
+          <span data-t="index.btn_patchbuilder">{{ t.index.btn_patchbuilder }}</span>
         </a>
       </div>
     </div>
@@ -54,27 +54,27 @@
     <!-- Stats bar -->
     <div class="home-hero__stats mx-auto mt-5">
       <div class="home-hero__stat">
-        <div class="home-hero__stat-num">4K</div>
-        <div class="home-hero__stat-label">Textures</div>
+        <div class="home-hero__stat-num">3.3.5a</div>
+        <div class="home-hero__stat-label" data-t="index.hero_stat_label1">{{ t.index.hero_stat_label1 }}</div>
       </div>
       <div class="home-hero__stat">
-        <div class="home-hero__stat-num">500+</div>
-        <div class="home-hero__stat-label">HD Models</div>
+        <div class="home-hero__stat-num">25+</div>
+        <div class="home-hero__stat-label" data-t="index.hero_stat_label2">{{ t.index.hero_stat_label2 }}</div>
       </div>
       <div class="home-hero__stat">
-        <div class="home-hero__stat-num">120K+</div>
-        <div class="home-hero__stat-label">Downloads</div>
+        <div class="home-hero__stat-num">35K+</div>
+        <div class="home-hero__stat-label" data-t="index.hero_stat_label3">{{ t.index.hero_stat_label3 }}</div>
       </div>
       <div class="home-hero__stat">
-        <div class="home-hero__stat-num">Free</div>
-        <div class="home-hero__stat-label">Forever</div>
+        <div class="home-hero__stat-num">> 7</div>
+        <div class="home-hero__stat-label" data-t="index.hero_stat_label4">{{ t.index.hero_stat_label4 }}</div>
       </div>
     </div>
   </div>
 
   <!-- Scroll hint -->
   <div class="home-hero__scroll position-absolute bottom-0 start-50 translate-middle-x mb-4">
-    <span>Scroll</span>
+    <span data-t="index.hero_scroll"> {{ t.index.hero_scroll }}</span>
     <div class="home-hero__scroll-arrow"></div>
   </div>
 </section>
@@ -86,12 +86,9 @@
   <div class="container-xl px-4">
     <div class="row align-items-end g-4">
       <div class="col-lg-6 reveal">
-        <p class="wh-section-label">Visual Upgrade</p>
-        <h2 class="wh-section-title">See the <em>Difference</em></h2>
-        <p class="wh-section-lead">
-          Drag the slider to compare original WotLK client visuals against the HD remaster.
-          Every texture hand-curated for authenticity.
-        </p>
+        <p class="wh-section-label" data-t="index.comparison_label">{{ t.index.comparison_label }}</p>
+        <h2 class="wh-section-title" data-t="index.comparison_title">{{ t.index.comparison_title }}</h2>
+        <p class="wh-section-lead" data-t="index.comparison_lead">{{ t.index.comparison_lead }}</p>
       </div>
     </div>
     <div class="home-comparison__wrap mt-4 reveal" id="comparisonWrap">
@@ -514,20 +511,18 @@
       </div>
       <div class="col-lg-5 reveal reveal-delay-2">
         <div class="d-flex flex-column align-items-stretch align-items-lg-start gap-3">
-          <a href="#" class="home-cta__dl-btn w-100 justify-content-center">
+          <a href="/download" class="home-cta__dl-btn w-100 justify-content-center">
             <i class="fa-solid fa-download fa-lg"></i>
-            <span>
-              <strong>Download Free</strong><br>
-            </span>
+            <span data-t="index.btn_download">{{ t.index.btn_download }}</span>
           </a>
-          <a href="#" class="wh-btn-secondary w-100 justify-content-center">
-            <i class="fa-solid fa-hammer me-2"></i>
-            Custom Patch Builder
+          <a href="/pb" class="wh-btn-secondary w-100 justify-content-center">
+            <i class="fa-solid fa-cog me-2"></i>
+            <span data-t="index.btn_patchbuilder">{{ t.index.btn_patchbuilder }}</span>
           </a>
-          <p class="home-cta__note">
+          <!-- <p class="home-cta__note">
             <i class="fa-solid fa-circle-check me-1" style="color:var(--wh-green)"></i>
-            No account required &nbsp;·&nbsp; 100% free &nbsp;·&nbsp; Open source
-          </p>
+            Open source
+          </p> -->
         </div>
       </div>
     </div>

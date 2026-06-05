@@ -5,8 +5,6 @@ export default async function ({ template, t }) {
 }
 
 export async function after({ params, query, t }) {
-
-  // Reveal on scroll
   const revealObserver = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
     { threshold: 0.12 }
@@ -31,4 +29,38 @@ export async function after({ params, query, t }) {
 
   let resp = await fetch('jsons/downloads.json');
   let data = await resp.json();
+
+  data.forEach((d, i) => {
+    const panel = document.querySelector(`#panel-${d.name}`);
+    const d_btn = document.querySelector(`#tag-${d.name}`);
+    const d_tag = panel.querySelector('.download-ver-tag');
+    d_tag.textContent = `v${d.version}-${d.name}`;
+    d_btn.textContent = `v${d.version}-${d.name}`;
+    d.links.forEach((l, j) => {
+      let link = panel.querySelector(`.src-${l.type}`);
+      if (link) link.href = l.url;
+    })
+  });
+
+  document.querySelectorAll('[data-modal-open]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.modalOpen;
+      document.getElementById(id).classList.add('open');
+      document.body.classList.add('wh-modal-open');
+    });
+  });
+
+  document.querySelectorAll('[data-modal-close]').forEach(el => {
+    el.addEventListener('click', () => closeAll());
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  function closeAll() {
+    document.querySelectorAll('.wh-modal.open')
+      .forEach(m => m.classList.remove('open'));
+    document.body.classList.remove('wh-modal-open');
+  }
 }

@@ -1,22 +1,24 @@
-{
-    "stable": {
-        "version": "2026.04.27",
-        "links": {
-            "tottent": "https://web-hdclient.trimitor.ru/wotlk/torrents/stable/wotlkhdclient_stable_all-langs_all-updates.torrent",
-            "gdrive": "https://drive.google.com/drive/u/2/folders/1xZyB0Qn3dSuvZrl1Hm5slcfOci8Gyk_H",
-            "mailru": "https://cloud.mail.ru/public/Pptn/MoiThnqVH/stable",
-            "nextcloud": "https://cloud-hdclient.trimitor.ru/s/4WE9mA65pwf6zG6?dir=/Stable",
-            "direct": "https://web-hdclient.trimitor.ru/wotlk/dist/stable/"
-        }
-    },
-    "beta": {
-        "version": "2026.04.27",
-        "links": {
-            "tottent": "https://web-hdclient.trimitor.ru/wotlk/torrents/beta/wotlkhdclient_beta_all-langs.torrent",
-            "gdrive": "https://drive.google.com/drive/u/2/folders/1XsOafQ9_7BnfBq4n-_adnmlnQAlb3p2e",
-            "mailru": "https://cloud.mail.ru/public/Pptn/MoiThnqVH/beta",
-            "nextcloud": "https://cloud-hdclient.trimitor.ru/s/4WE9mA65pwf6zG6?dir=/Beta",
-            "direct": "https://web-hdclient.trimitor.ru/wotlk/dist/beta/"
-        }
-    }
-}
+[
+  {
+    "name": "stable",
+    "version": "2026.04.27",
+    "links": [
+      { "type": "torrent", "url": "https://web-hdclient.trimitor.ru/wotlk/torrents/stable/wotlkhdclient_stable_all-langs_all-updates.torrent" },
+      { "type": "gdrive", "url": "https://drive.google.com/drive/u/2/folders/1xZyB0Qn3dSuvZrl1Hm5slcfOci8Gyk_H" },
+      { "type": "mailru", "url": "https://cloud.mail.ru/public/Pptn/MoiThnqVH/stable" },
+      { "type": "nextcloud", "url": "https://cloud-hdclient.trimitor.ru/s/4WE9mA65pwf6zG6?dir=/Stable" },
+      { "type": "direct", "url": "https://web-hdclient.trimitor.ru/wotlk/dist/stable/" }
+    ]
+  },
+  {
+    "name": "beta",
+    "version": "2026.04.27",
+    "links": [
+      { "type": "torrent", "url": "https://web-hdclient.trimitor.ru/wotlk/torrents/beta/wotlkhdclient_beta_all-langs.torrent" },
+      { "type": "gdrive", "url": "https://drive.google.com/drive/u/2/folders/1XsOafQ9_7BnfBq4n-_adnmlnQAlb3p2e" },
+      { "type": "mailru", "url": "https://cloud.mail.ru/public/Pptn/MoiThnqVH/beta" },
+      { "type": "nextcloud", "url": "https://cloud-hdclient.trimitor.ru/s/4WE9mA65pwf6zG6?dir=/Beta" },
+      { "type": "direct", "url": "https://web-hdclient.trimitor.ru/wotlk/dist/beta/" }
+    ]
+  }
+]
