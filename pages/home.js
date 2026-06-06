@@ -69,7 +69,7 @@ function createComparison(slides) {
   }
 
   function setDivider(pct) {
-    state.dividerX = Math.min(95, Math.max(5, pct));
+    state.dividerX = Math.min(100, Math.max(0, pct));
     divider.style.left = `${state.dividerX}%`;
     if (layers[state.current]) {
       layers[state.current].before.style.clipPath = `inset(0 ${100 - state.dividerX}% 0 0)`;
