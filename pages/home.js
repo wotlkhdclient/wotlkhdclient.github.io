@@ -13,185 +13,137 @@ export default async function ({ template, t }) {
   return Mustache.render(template, { t });
 }
 
+function buildLayerPair(slide, index) {
+  const after = document.createElement('div');
+  after.className = 'home-comparison__after-layer comp-slide-layer';
+  after.dataset.idx = index;
+  after.style.cssText = 'opacity:0; transition:opacity .4s ease; z-index:1;';
+
+  if (slide.afterSrc) {
+    const img = new Image();
+    img.src = slide.afterSrc;
+    img.draggable = false;
+    after.appendChild(img);
+  } else {
+    after.innerHTML = slide.afterPlaceholder || '';
+  }
+
+  const before = document.createElement('div');
+  before.className = 'home-comparison__before-layer comp-slide-layer';
+  before.dataset.idx = index;
+  before.style.cssText = 'opacity:0; transition:opacity .4s ease; z-index:2; clip-path:inset(0 50% 0 0); will-change:clip-path;';
+
+  if (slide.beforeSrc) {
+    const img = new Image();
+    img.src = slide.beforeSrc;
+    img.draggable = false;
+    before.appendChild(img);
+  } else {
+    before.innerHTML = slide.beforePlaceholder || '';
+  }
+
+  return { before, after };
+}
+
+function createComparison(slides) {
+  const state = { current: 0, dividerX: 50 };
+
+  const wrap          = document.getElementById('comparisonWrap');
+  const divider       = document.getElementById('compDivider');
+  const dotsContainer = document.getElementById('compDots');
+  const layers        = [];
+
+  function goTo(index) {
+    const prev = state.current;
+    state.current = (index + slides.length) % slides.length;
+
+    layers[prev].before.style.opacity = '0';
+    layers[prev].after.style.opacity  = '0';
+
+    layers[state.current].before.style.opacity = '1';
+    layers[state.current].after.style.opacity  = '1';
+    layers[state.current].before.style.clipPath = `inset(0 ${100 - state.dividerX}% 0 0)`;
+
+    updateDots(state.current);
+    setDivider(50);
+  }
+
+  function setDivider(pct) {
+    state.dividerX = Math.min(95, Math.max(5, pct));
+    divider.style.left = `${state.dividerX}%`;
+    if (layers[state.current]) {
+      layers[state.current].before.style.clipPath = `inset(0 ${100 - state.dividerX}% 0 0)`;
+    }
+  }
+
+  function onDragStart(e) {
+    e.preventDefault();
+    const move = (ev) => {
+      const clientX = ev.touches ? ev.touches[0].clientX : ev.clientX;
+      const rect = wrap.getBoundingClientRect();
+      setDivider(((clientX - rect.left) / rect.width) * 100);
+    };
+    const stop = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('touchmove', move);
+      window.removeEventListener('mouseup',   stop);
+      window.removeEventListener('touchend',  stop);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('touchmove', move, { passive: true });
+    window.addEventListener('mouseup',   stop);
+    window.addEventListener('touchend',  stop);
+  }
+
+  function rebuildDots() {
+    dotsContainer.innerHTML = slides.map((_, i) =>
+      `<button class="home-comparison__dot${i === state.current ? ' active' : ''}" data-idx="${i}"></button>`
+    ).join('');
+    dotsContainer.querySelectorAll('.home-comparison__dot').forEach(btn => {
+      btn.addEventListener('click', () => goTo(Number(btn.dataset.idx)));
+    });
+  }
+
+  function updateDots(index) {
+    dotsContainer.querySelectorAll('.home-comparison__dot').forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+  }
+
+  const overlay = wrap.querySelector('.home-comparison__overlay');
+
+  slides.forEach((slide, i) => {
+    const pair = buildLayerPair(slide, i);
+    wrap.insertBefore(pair.after,  overlay);
+    wrap.insertBefore(pair.before, overlay);
+    layers.push(pair);
+  });
+
+  wrap.addEventListener('mousedown',  onDragStart);
+  wrap.addEventListener('touchstart', onDragStart, { passive: false });
+
+  document.getElementById('compPrev').addEventListener('click', () => goTo(state.current - 1));
+  document.getElementById('compNext').addEventListener('click', () => goTo(state.current + 1));
+
+  rebuildDots();
+  goTo(0);
+}
+
 export async function after({ params, query, t }) {
-  // Reveal on scroll
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  // await compSlider(t);
-  // await gallery();
-}
-
-async function compSlider(t) {
-  const pairs = await fetch('data/comparison.txt')
+  const slides = [];
+  await fetch('/data/comparison.txt')
     .then(r => r.text())
-    .then(t => t.split(/\r?\n/).filter(Boolean).map(line => line.split('|')));
-
-  const wrap = document.getElementById('compWrap');
-  const dotsContainer = document.getElementById('compDots');
-
-  wrap.querySelectorAll('.comp-slide').forEach(s => s.remove());
-  dotsContainer.innerHTML = '';
-
-  pairs.forEach(([beforeUrl, afterUrl], i) => {
-    const slide = document.createElement('div');
-    slide.className = 'comp-slide' + (i === 0 ? ' active' : '');
-    slide.id = 'slide' + i;
-    slide.innerHTML = `
-      <div class="comp-img-base">
-        <img src="${afterUrl}" draggable="false">
-      </div>
-      <div class="comp-img-overlay" style="visibility: hidden;">
-        <img src="${beforeUrl}" draggable="false" style="width: 0">
-      </div>
-      <div class="comp-label-before" data-t="index.comparison_label_before">${t.index.comparison_label_before}</div>
-      <div class="comp-label-after" data-t="index.comparison_label_after">${t.index.comparison_label_after}</div></div>
-      <div class="comp-divider" id="divider${i}" style="visibility: hidden;">
-        <div class="comp-handle">⟺</div>
-      </div>
-    `;
-    wrap.insertBefore(slide, wrap.querySelector('.carousel-nav'));
-
-    const dot = document.createElement('div');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.dataset.idx = i;
-    dotsContainer.appendChild(dot);
-  });
-
-  let compIdx = 0;
-  let dragging = false;
-  let cachedRect = null;
-  let activeOverlay = null;
-  let activeDivider = null;
-
-  const caption = document.getElementById('compCaption');
-
-  function getAllSlides() { return wrap.querySelectorAll('.comp-slide'); }
-  function getAllDots() { return dotsContainer.querySelectorAll('.carousel-dot'); }
-
-  function initSlide(idx) {
-    const slide = wrap.querySelector('#slide' + idx);
-    if (!slide) return;
-    const overlay = slide.querySelector('.comp-img-overlay');
-    const divider = slide.querySelector('.comp-divider');
-    const slideW = slide.offsetWidth;
-
-    overlay.querySelector('img').style.width = slideW + 'px';
-    overlay.style.width = (slideW / 2) + 'px';
-    divider.style.left = (slideW / 2) + 'px';
-
-    overlay.style.visibility = '';
-    divider.style.visibility = '';
-  }
-
-  function goSlide(n) {
-    const allSlides = getAllSlides();
-    const allDots = getAllDots();
-    allSlides[compIdx].classList.remove('active');
-    allDots[compIdx].classList.remove('active');
-    compIdx = (n + allSlides.length) % allSlides.length;
-    allSlides[compIdx].classList.add('active');
-    allDots[compIdx].classList.add('active');
-    if (caption) caption.textContent = '';
-    setTimeout(() => initSlide(compIdx), 50);
-  }
-
-  function setPos(e) {
-    if (!cachedRect || !activeOverlay || !activeDivider) return;
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const pos = Math.max(0, Math.min(cachedRect.width, clientX - cachedRect.left));
-    activeOverlay.querySelector('img').style.width = cachedRect.width + 'px';
-    activeOverlay.style.width = pos + 'px';
-    activeDivider.style.left = pos + 'px';
-  }
-
-  function startDrag(e) {
-    dragging = true;
-    const slide = wrap.querySelector('#slide' + compIdx);
-    cachedRect = slide.getBoundingClientRect();
-    activeOverlay = slide.querySelector('.comp-img-overlay');
-    activeDivider = slide.querySelector('.comp-divider');
-    setPos(e);
-  }
-
-  function stopDrag() {
-    dragging = false;
-    cachedRect = null;
-    activeOverlay = null;
-    activeDivider = null;
-  }
-
-  setTimeout(() => initSlide(0), 50);
-
-  document.getElementById('compPrev').onclick = () => goSlide(compIdx - 1);
-  document.getElementById('compNext').onclick = () => goSlide(compIdx + 1);
-  dotsContainer.addEventListener('click', e => {
-    if (e.target.dataset.idx !== undefined) goSlide(+e.target.dataset.idx);
-  });
-
-  wrap.addEventListener('mousedown', e => startDrag(e));
-  wrap.addEventListener('touchstart', e => startDrag(e), { passive: true });
-  document.addEventListener('mousemove', e => { if (dragging) setPos(e); });
-  document.addEventListener('touchmove', e => { if (dragging) setPos(e); }, { passive: true });
-  document.addEventListener('mouseup', stopDrag);
-  document.addEventListener('touchend', stopDrag);
-}
-
-async function gallery() {
-  const urls = await fetch('data/gallery.txt')
-    .then(r => r.text())
-    .then(t => t.split(/\r?\n/).filter(Boolean));
-
-  const track = document.getElementById('galleryTrack');
-  const items = [...urls, ...urls];
-
-  const overlay = document.createElement('div');
-  overlay.className = 'lightbox-overlay';
-  const img = document.createElement('img');
-  overlay.appendChild(img);
-  document.body.appendChild(overlay);
-
-  overlay.addEventListener('click', () => overlay.classList.remove('active'));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') overlay.classList.remove('active');
-  });
-
-  items.forEach((url, i) => {
-    const d = document.createElement('div');
-    d.className = 'gallery-thumb';
-    d.style.backgroundImage = `url('${url}')`;
-    d.style.backgroundSize = 'cover';
-    d.style.backgroundPosition = 'center';
-    d.style.cursor = 'zoom-in';
-
-    d.addEventListener('click', () => {
-      img.src = url;
-      overlay.classList.add('active');
+    .then(text => {
+      text.trim().split('\n').forEach(line => {
+        const [beforeSrc, afterSrc] = line.trim().split('|');
+        if (beforeSrc && afterSrc) slides.push({ beforeSrc, afterSrc });
+      });
     });
 
-    const pauseGallery = () => track.style.animationPlayState = 'paused';
-    const resumeGallery = () => track.style.animationPlayState = 'running';
-
-    overlay.addEventListener('click', () => {
-      overlay.classList.remove('active');
-      resumeGallery();
-    });
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        overlay.classList.remove('active');
-        resumeGallery();
-      }
-    });
-
-    d.addEventListener('click', () => {
-      img.src = url;
-      overlay.classList.add('active');
-      pauseGallery();
-    });
-
-    track.appendChild(d);
-  });
+  createComparison(slides);
 }

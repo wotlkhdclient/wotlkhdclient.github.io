@@ -795,12 +795,8 @@ body {
 }
 
 
-/* ─────────────────────────────────────────────
-   COMPARISON
-───────────────────────────────────────────── */
 .home-comparison { background: linear-gradient(180deg, var(--wh-bg-deep) 0%, #07101f 50%, var(--wh-bg-deep) 100%); }
 
-/* Tabs */
 .home-comparison__tabs { gap: 8px; }
 
 .home-comparison__tab {
@@ -824,7 +820,6 @@ body {
   color: var(--wh-blue);
 }
 
-/* Main slider wrap */
 .home-comparison__wrap {
   position: relative;
   border-radius: 16px;
@@ -836,29 +831,40 @@ body {
   user-select: none;
 }
 
-.home-comparison__slide {
-  position: absolute;
-  inset: 0;
-  display: none;
-}
-
-.home-comparison__slide.active { display: block; }
-
-/* Before / After halves */
-.home-comparison__before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 50%;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.home-comparison__after {
+.home-comparison__after-layer {
   position: absolute;
   inset: 0;
   z-index: 1;
+}
+
+.home-comparison__after-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  draggable: false;
+}
+
+.home-comparison__before-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  clip-path: inset(0 50% 0 0);
+  will-change: clip-path;
+}
+
+.home-comparison__before-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-comparison__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .home-comparison__ph {
@@ -880,71 +886,6 @@ body {
   background: linear-gradient(135deg, #0d1e3a 0%, #152a46 100%);
 }
 
-/* Placeholder pixel grid & HD grid (from original) */
-.ph-pixels {
-  width: 80px;
-  height: 60px;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1px;
-}
-
-.ph-px {
-  background: rgba(100,140,180,.15);
-  border-radius: 1px;
-}
-
-.ph-px:nth-child(3n) { background: rgba(60,100,160,.20); }
-.ph-px:nth-child(5n) { background: rgba(80,120,200,.12); }
-
-.ph-label {
-  font-family: var(--wh-font-display);
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(140,180,220,.35);
-}
-
-.ph-sub {
-  font-size: 11px;
-  color: rgba(100,140,180,.25);
-  letter-spacing: 1px;
-}
-
-.ph-hd-grid {
-  width: 90px;
-  height: 65px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #0d2040, #1a3560);
-}
-
-.ph-hd-glow { position: absolute; border-radius: 50%; }
-
-.ph-hd-glow1 {
-  width: 60px; height: 60px;
-  top: -20px; left: -10px;
-  background: radial-gradient(circle, rgba(140,200,245,.20), transparent 70%);
-}
-
-.ph-hd-glow2 {
-  width: 40px; height: 40px;
-  bottom: -10px; right: -5px;
-  background: radial-gradient(circle, rgba(232,160,48,.15), transparent 70%);
-}
-
-.ph-hd-lines { position: absolute; inset: 0; }
-
-.ph-hd-line {
-  position: absolute;
-  height: 1px;
-  left: 10%;
-  right: 10%;
-  background: rgba(140,200,245,.08);
-}
-
-/* Divider handle */
 .home-comparison__divider {
   position: absolute;
   top: 0;
@@ -960,7 +901,7 @@ body {
     transparent
   );
   transform: translateX(-50%);
-  z-index: 10;
+  pointer-events: all;
 }
 
 .home-comparison__handle {
@@ -981,7 +922,6 @@ body {
   box-shadow: 0 0 20px rgba(30,90,160,.40);
 }
 
-/* Labels */
 .home-comparison__label {
   position: absolute;
   top: 16px;
@@ -992,13 +932,12 @@ body {
   border: 1px solid var(--wh-border-dim, rgba(100,160,220,.09));
   border-radius: 4px;
   padding: 4px 12px;
-  z-index: 5;
+  pointer-events: none;
 }
 
 .home-comparison__label--before { left: 16px; color: var(--wh-text-dim); }
 .home-comparison__label--after  { right: 16px; color: var(--wh-blue); }
 
-/* Carousel nav */
 .home-comparison__nav-btn {
   width: 38px;
   height: 38px;
@@ -1525,34 +1464,7 @@ body {
 }
 
 
-.img-comp-container {
-  position: relative;
-  height: 1920px; /*должна быть той же высоты, что и изображения*/
-}
 
-.img-comp-img {
-  position: absolute;
-  width: auto;
-  height: auto;
-  overflow: hidden;
-}
-
-.img-comp-img img {
-  display: block;
-  vertical-align: middle;
-}
-
-.img-comp-slider {
-  position: absolute;
-  z-index: 9;
-  cursor: ew-resize;
-  /*установите внешний вид ползунка:*/
-  width: 40px;
-  height: 40px;
-  background-color: #2196F3;
-  opacity: 0.7;
-  border-radius: 50%;
-}
 
 .download-hero__extra-radial {
   position: absolute;

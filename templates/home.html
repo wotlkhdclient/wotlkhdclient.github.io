@@ -84,6 +84,7 @@
 
 <section class="home-comparison py-section">
   <div class="container-xl px-4">
+
     <div class="row align-items-end g-4">
       <div class="col-lg-6 reveal">
         <p class="wh-section-label" data-t="index.comparison_label">{{ t.index.comparison_label }}</p>
@@ -91,68 +92,30 @@
         <p class="wh-section-lead" data-t="index.comparison_lead">{{ t.index.comparison_lead }}</p>
       </div>
     </div>
-    <!-- <div class="home-comparison__wrap mt-4 reveal" id="comparisonWrap">
-      <div class="home-comparison__slide active" data-index="0">
-        <div class="home-comparison__before">
-          <div class="home-comparison__ph home-comparison__ph--before">
-            <div class="ph-pixels">
-              <span class="ph-px" style="display:block"
-                *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]"></span>
-            </div>
-            <span class="ph-label">Original</span>
-            <span class="ph-sub">3.3.5a Client</span>
-          </div>
-        </div>
-        <div class="home-comparison__after">
-          <div class="home-comparison__ph home-comparison__ph--after">
-            <div class="ph-hd-grid">
-              <div class="ph-hd-glow ph-hd-glow1"></div>
-              <div class="ph-hd-glow ph-hd-glow2"></div>
-              <div class="ph-hd-lines">
-                <div class="ph-hd-line" style="top:20%"></div>
-                <div class="ph-hd-line" style="top:40%"></div>
-                <div class="ph-hd-line" style="top:60%"></div>
-                <div class="ph-hd-line" style="top:80%"></div>
-              </div>
-            </div>
-            <span class="ph-label">HD Remaster</span>
-            <span class="ph-sub">4K Enhanced</span>
-          </div>
-        </div>
+    <div class="home-comparison__wrap mt-4 reveal" id="comparisonWrap">
+      <div class="home-comparison__after-layer" id="compAfterLayer"></div>
+      <div class="home-comparison__before-layer" id="compBeforeLayer"></div>
+
+      <div class="home-comparison__overlay">
         <div class="home-comparison__divider" id="compDivider">
           <div class="home-comparison__handle">
             <i class="fa-solid fa-arrows-left-right"></i>
           </div>
         </div>
-        <span class="home-comparison__label home-comparison__label--before">Before</span>
-        <span class="home-comparison__label home-comparison__label--after">After</span>
+        <span class="home-comparison__label home-comparison__label--before" data-t="index.comparison_label_before">{{ t.index.comparison_label_before }}</span>
+        <span class="home-comparison__label home-comparison__label--after" data-t="index.comparison_label_after">{{ t.index.comparison_label_after }}</span>
       </div>
-
-    </div> -->
-    
-    <div class="img-comp-container">
-        <div class="img-comp-img">
-          <img src="assets/images/charactercreation_o.png" width="1600" height="900">
-        </div>
-        <div class="img-comp-img img-comp-overlay">
-          <img src="assets/images/charactercreation_h.png" width="1600" height="900">
-        </div>
-      </div>
-
-
+    </div>
     <div class="d-flex align-items-center justify-content-center gap-3 mt-4">
       <button class="home-comparison__nav-btn" id="compPrev" aria-label="Previous">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-      <div class="d-flex gap-2" id="compDots">
-        <button class="home-comparison__dot active" data-idx="0"></button>
-        <button class="home-comparison__dot" data-idx="1"></button>
-        <button class="home-comparison__dot" data-idx="2"></button>
-      </div>
+      <div class="d-flex gap-2" id="compDots"></div>
       <button class="home-comparison__nav-btn" id="compNext" aria-label="Next">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>
+
   </div>
 </section>
 
