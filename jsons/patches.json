@@ -1,0 +1,45 @@
+[
+    {
+        "id": "xx-c",
+        "image": "/assets/patches/patch-c2_0_2s.png",
+        "title": "Saved Accounts, Server List & Custom Login Screens",
+        "description": "This patch adds several quality-of-life improvements to your login experience",
+        "tags": ["Interface"]
+    },
+    {
+        "id": "xx-m",
+        "image": "/assets/patches/patch-m2_0_2s.png",
+        "title": "Classic & TBC Dungeon Maps",
+        "description": "The patch adds 56 maps from retail World of Warcraft, including dungeons, continents, and battlegrounds",
+        "tags": ["Gameplay"]
+    },
+    {
+        "id": "xx-n",
+        "image": "/assets/patches/patch-n2_0_2s.png",
+        "title": "Cavern and Mines Maps",
+        "description": "It includes various extra locations such as caves, mines, dungeon entrances, starting zones, and hidden areas like GM Island and Hyjal.",
+        "tags": ["Gameplay"]
+    },
+    {
+        "id": "xx-s",
+        "image": "/assets/patches/patch-s2_0_2s.png",
+        "title": "New Spells Visual Effects",
+        "description": "This patch adds several quality-of-life improvements to your login experience",
+        "tags": ["Gameplay"]
+    },
+    {
+        "id": "xx-j",
+        "image": "/assets/patches/patch-j1.png",
+        "title": "Character Creation Screen - Mists of Pandaria Style",
+        "description": "This patch replaces the character creation interface with a layout inspired by World of Warcraft: Mists of Pandaria.",
+        "tags": ["Interface"]
+    },
+    {
+        "id": "xx-k",
+        "image": "/assets/patches/patch-k1.png",
+        "title": "Character Creation Screen - Shadowlands Style",
+        "description": "This patch completely replaces the character creation interface with a redesigned version inspired by World of Warcraft: Shadowlands.",
+        "tags": ["Interface"]
+    }
+
+]

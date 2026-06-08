@@ -1153,7 +1153,15 @@ body {
 .home-patch-card__thumb-tag--green  { background: rgba(61,214,140,.10); border-color: rgba(61,214,140,.22); color: var(--wh-green); }
 .home-patch-card__thumb-tag--violet { background: rgba(200,100,220,.10); border-color: rgba(200,100,220,.22); color: #cc88ee; }
 
+.home-patch-card__img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
 .home-patch-card__body { padding: 24px; }
+.home-patch-card__body a { text-decoration: none; }
 
 .home-patch-card__title {
   font-family: var(--wh-font-display);
@@ -2525,3 +2533,403 @@ body {
 
 /* scroll-lock на body */
 body.wh-modal-open { overflow: hidden; }
+
+/* =============================================================
+   patch.css  —  Страница описания патча
+   Префиксы: .patch-wrap  .patch-media  .patch-content
+             .patch-carousel  .patch-video
+   ============================================================= */
+
+/* ─────────────────────────────────────────────
+   WRAP
+───────────────────────────────────────────── */
+.patch-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 108px 0 100px; /* 60px navbar + 48px отступ */
+}
+
+/* ─────────────────────────────────────────────
+   MEDIA BLOCK  (над контентом)
+───────────────────────────────────────────── */
+.patch-media {
+  margin-bottom: 36px;
+}
+
+.patch-media:empty {
+  display: none;
+}
+
+/* ── Одиночное изображение ── */
+.patch-media__single {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--wh-border-dim);
+  object-fit: cover;
+}
+
+/* ── Видео (одиночное, без картинок) ── */
+.patch-video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--wh-border-dim);
+  background: #060e1c;
+}
+
+/* ─────────────────────────────────────────────
+   CAROUSEL  (2+ изображений)
+───────────────────────────────────────────── */
+.patch-carousel {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--wh-border-dim);
+  background: #060e1c;
+  user-select: none;
+}
+
+/* Трек */
+.patch-carousel__track {
+  display: flex;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+
+.patch-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.patch-carousel__slide img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+/* Кнопки prev / next */
+.patch-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(5,10,20,.72);
+  border: 1px solid rgba(140,200,245,.25);
+  color: rgba(200,225,245,.85);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: background .18s, border-color .18s;
+  backdrop-filter: blur(6px);
+  line-height: 1;
+}
+
+.patch-carousel__btn:hover {
+  background: rgba(30,70,140,.75);
+  border-color: rgba(140,200,245,.50);
+}
+
+.patch-carousel__btn--prev { left: 12px; }
+.patch-carousel__btn--next { right: 12px; }
+
+.patch-carousel__btn:disabled {
+  opacity: .3;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Dots */
+.patch-carousel__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 5;
+}
+
+.patch-carousel__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(200,225,245,.30);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background .2s, transform .2s;
+}
+
+.patch-carousel__dot.active {
+  background: var(--wh-gold);
+  transform: scale(1.3);
+}
+
+/* Счётчик */
+.patch-carousel__counter {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--wh-font-display);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(200,225,245,.55);
+  background: rgba(5,10,20,.60);
+  border: 1px solid rgba(100,160,220,.18);
+  border-radius: 5px;
+  padding: 3px 9px;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+}
+
+/* Свайп на тач-устройствах */
+.patch-carousel { touch-action: pan-y; }
+
+
+/* ─────────────────────────────────────────────
+   PATCH-CONTENT  — вывод marked
+───────────────────────────────────────────── */
+.patch-content > *:first-child { margin-top: 0; }
+.patch-content > *:last-child  { margin-bottom: 0; }
+
+/* Заголовки */
+.patch-content h1,
+.patch-content h2,
+.patch-content h3,
+.patch-content h4 {
+  font-family: var(--wh-font-display);
+  font-weight: 600;
+  color: var(--wh-text);
+  line-height: 1.25;
+  letter-spacing: -.2px;
+  margin: 32px 0 12px;
+}
+
+.patch-content h1 { font-size: 28px; }
+.patch-content h2 { font-size: 22px; }
+.patch-content h3 { font-size: 18px; }
+.patch-content h4 { font-size: 15px; color: var(--wh-text-muted); }
+
+.patch-content h2::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: rgba(140,200,245,.30);
+  margin-top: 8px;
+}
+
+/* Абзацы */
+.patch-content p {
+  font-size: 15px;
+  color: var(--wh-text-muted);
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+/* Жирный / курсив */
+.patch-content strong { color: var(--wh-text); font-weight: 600; }
+.patch-content em     { font-style: italic; }
+
+/* Списки */
+.patch-content ul,
+.patch-content ol {
+  padding: 0;
+  margin: 0 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patch-content li {
+  font-size: 15px;
+  color: var(--wh-text-muted);
+  line-height: 1.7;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.patch-content ul > li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--wh-blue);
+  flex-shrink: 0;
+  margin-top: 9px;
+}
+
+.patch-content ol { counter-reset: patch-ol; }
+.patch-content ol > li { counter-increment: patch-ol; }
+
+.patch-content ol > li::before {
+  content: counter(patch-ol);
+  font-family: var(--wh-font-display);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--wh-gold);
+  background: rgba(232,160,48,.10);
+  border: 1px solid rgba(232,160,48,.22);
+  border-radius: 4px;
+  min-width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Инлайн код */
+.patch-content code {
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 12.5px;
+  color: var(--wh-blue);
+  background: rgba(10,22,44,.70);
+  border: 1px solid rgba(100,160,220,.18);
+  border-radius: 5px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+/* Блок кода */
+.patch-content pre {
+  background: rgba(5,12,25,.80);
+  border: 1px solid rgba(100,160,220,.16);
+  border-left: 3px solid rgba(100,160,220,.35);
+  border-radius: 8px;
+  padding: 18px 20px;
+  overflow-x: auto;
+  margin: 0 0 20px;
+}
+
+.patch-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: var(--wh-text-muted);
+  white-space: pre;
+}
+
+/* Blockquote */
+.patch-content blockquote {
+  border-left: 3px solid rgba(232,160,48,.40);
+  border-radius: 0;
+  background: rgba(232,160,48,.04);
+  margin: 0 0 20px;
+  padding: 14px 18px;
+}
+
+.patch-content blockquote p {
+  color: rgba(220,190,130,.80);
+  font-style: italic;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Разделитель */
+.patch-content hr {
+  border: none;
+  border-top: 1px solid var(--wh-border-dim);
+  margin: 32px 0;
+}
+
+/* Ссылки */
+.patch-content a {
+  color: var(--wh-blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(140,200,245,.30);
+  text-underline-offset: 3px;
+  transition: color .18s, text-decoration-color .18s;
+}
+
+.patch-content a:hover {
+  color: #aad8f8;
+  text-decoration-color: rgba(140,200,245,.65);
+}
+
+/* Изображения внутри контента (остаточные, не поднятые в медиа) */
+.patch-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--wh-border-dim);
+  margin: 20px 0;
+}
+
+/* Локальное видео */
+.patch-content .patch-video--local {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--wh-border-dim);
+  background: #060e1c;
+  margin: 20px 0;
+}
+
+/* YouTube — враппер держит 16:9 */
+.patch-content .patch-video-wrap--youtube {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--wh-border-dim);
+  background: #060e1c;
+  margin: 20px 0;
+}
+
+.patch-content .patch-video--youtube {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Таблицы */
+.patch-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.patch-content th {
+  font-family: var(--wh-font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--wh-text-dim);
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--wh-border);
+}
+
+.patch-content td {
+  padding: 10px 14px;
+  color: var(--wh-text-muted);
+  border-bottom: 1px solid var(--wh-border-dim);
+}
+
+.patch-content tr:last-child td { border-bottom: none; }
+.patch-content tr:hover td { background: rgba(60,120,200,.05); }
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .patch-wrap { padding: 32px 0 64px; }
+  .patch-carousel__btn { width: 34px; height: 34px; font-size: 14px; }
+}

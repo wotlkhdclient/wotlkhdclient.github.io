@@ -48,20 +48,20 @@ function buildLayerPair(slide, index) {
 function createComparison(slides) {
   const state = { current: 0, dividerX: 50 };
 
-  const wrap          = document.getElementById('comparisonWrap');
-  const divider       = document.getElementById('compDivider');
+  const wrap = document.getElementById('comparisonWrap');
+  const divider = document.getElementById('compDivider');
   const dotsContainer = document.getElementById('compDots');
-  const layers        = [];
+  const layers = [];
 
   function goTo(index) {
     const prev = state.current;
     state.current = (index + slides.length) % slides.length;
 
     layers[prev].before.style.opacity = '0';
-    layers[prev].after.style.opacity  = '0';
+    layers[prev].after.style.opacity = '0';
 
     layers[state.current].before.style.opacity = '1';
-    layers[state.current].after.style.opacity  = '1';
+    layers[state.current].after.style.opacity = '1';
     layers[state.current].before.style.clipPath = `inset(0 ${100 - state.dividerX}% 0 0)`;
 
     updateDots(state.current);
@@ -86,13 +86,13 @@ function createComparison(slides) {
     const stop = () => {
       window.removeEventListener('mousemove', move);
       window.removeEventListener('touchmove', move);
-      window.removeEventListener('mouseup',   stop);
-      window.removeEventListener('touchend',  stop);
+      window.removeEventListener('mouseup', stop);
+      window.removeEventListener('touchend', stop);
     };
     window.addEventListener('mousemove', move);
     window.addEventListener('touchmove', move, { passive: true });
-    window.addEventListener('mouseup',   stop);
-    window.addEventListener('touchend',  stop);
+    window.addEventListener('mouseup', stop);
+    window.addEventListener('touchend', stop);
   }
 
   function rebuildDots() {
@@ -114,12 +114,12 @@ function createComparison(slides) {
 
   slides.forEach((slide, i) => {
     const pair = buildLayerPair(slide, i);
-    wrap.insertBefore(pair.after,  overlay);
+    wrap.insertBefore(pair.after, overlay);
     wrap.insertBefore(pair.before, overlay);
     layers.push(pair);
   });
 
-  wrap.addEventListener('mousedown',  onDragStart);
+  wrap.addEventListener('mousedown', onDragStart);
   wrap.addEventListener('touchstart', onDragStart, { passive: false });
 
   document.getElementById('compPrev').addEventListener('click', () => goTo(state.current - 1));
@@ -129,11 +129,31 @@ function createComparison(slides) {
   goTo(0);
 }
 
+function createPatchesList(patches) {
+  const wrap = document.querySelector('.home-patches__list');
+  wrap.innerHTML = patches.map(patch => `
+    <div class="col-md-6 reveal reveal-delay-1">
+        <article class="home-patch-card">
+          <div class="home-patch-card__thumb home-patch-card__thumb--blue">
+            <div class="home-patch-card__thumb-glow ptg1" aria-hidden="true"></div>
+            <img class="home-patch-card__img" src="${patch?.image}" alt="${patch?.title}">
+          </div>
+          <div class="home-patch-card__body">
+            <a href="/patch?id=${patch?.id}">
+              <h3 class="home-patch-card__title">${patch?.title}</h3>
+            </a>
+            <p class="home-patch-card__desc">
+              ${patch?.description}
+            </p>
+            <div class="home-patch-card__meta">
+              <span class="home-patch-card__size"><i class="fa-solid fa-tag me-1"></i>${patch?.tags?.join(', ')}</span>
+            </div>
+          </div>
+        </article>
+      </div>`).join('\n');
+}
+
 export async function after({ params, query, t }) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   const slides = [];
   await fetch('/data/comparison.txt')
@@ -145,5 +165,26 @@ export async function after({ params, query, t }) {
       });
     });
 
+  const patches = await fetch('/jsons/patches.json')
+    .then(r => r.json())
+    .then(json => {
+      const shuffled = [...json];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.slice(0, 4);
+    })
+    .catch(() => []);
+
   createComparison(slides);
+  createPatchesList(patches);
+
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.12 }
+  );
+
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
 }
+
