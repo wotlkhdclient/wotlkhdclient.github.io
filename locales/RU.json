@@ -28,7 +28,16 @@
     "comparison_title": "Ощутите |разницу|",
     "comparison_lead": "Перетащите разделитель, чтобы сравнить оригинальную и улучшенную графику в разных локациях.",
     "comparison_label_before": "Обычный клиент",
-    "comparison_label_after": "WotLK HD Client"
+    "comparison_label_after": "WotLK HD Client",
+    "features_label": "Что внутри",
+    "features_title": "Всё, что вам |нужно|",
+    "features_lead": "Полная переработка игры, созданная сообществом для сообщества.",
+    "patches_label": "Наши модификации",
+    "patches_title": "Патчи |наглядно|",
+    "patches_lead": "Ниже лишь небольшой список наших модификаций. Мы постарались затронуть каждый аспект игры.",
+    "btn_all_patches": "Посмотреть все патчи",
+    "showcase_label": "Демонстрация",
+    "showcase_title": "|Галерея| скриншотов"
   },
   "footer": {
     "note1": "WotLK HD Client - Некоммерческий проект · Не связан с Blizzard Entertainment",

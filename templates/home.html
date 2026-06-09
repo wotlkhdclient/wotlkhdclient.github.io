@@ -121,11 +121,9 @@
 <section class="home-features py-section">
   <div class="container-xl px-4">
     <div class="text-center reveal">
-      <p class="wh-section-label">What's Included</p>
-      <h2 class="wh-section-title">Everything You <em>Need</em></h2>
-      <p class="wh-section-lead mx-auto">
-        A complete HD overhaul built by the community, for the community.
-      </p>
+      <p class="wh-section-label" data-t="index.features_label">{{ t.index.features_label }}</p>
+      <h2 class="wh-section-title" data-t="index.features_title">{{ t.index.features_title }}</h2>
+      <p class="wh-section-lead mx-auto" data-t="index.features_lead">{{ t.index.features_lead }}</p>
     </div>
 
     <div class="home-features__grid mt-5">
@@ -211,13 +209,10 @@
 <section class="home-patches py-section">
   <div class="container-xl px-4">
     <div class="row align-items-end g-4 mb-5">
-      <div class="col-md-8 reveal">
-        <p class="wh-section-label">Latest Releases</p>
-        <h2 class="wh-section-title">Featured <em>Patches</em></h2>
-        <p class="wh-section-lead">Fresh from the workshop — our most downloaded packs this month.</p>
-      </div>
-      <div class="col-md-4 text-md-end reveal reveal-delay-1">
-        <a href="/patches" class="wh-btn-secondary btn-sm">View All Patches</a>
+      <div class="col-md-12 reveal">
+        <p class="wh-section-label" data-t="index.patches_label">{{ t.index.patches_label }}</p>
+        <h2 class="wh-section-title" data-t="index.patches_title">{{ t.index.patches_title }}</h2>
+        <p class="wh-section-lead" data-t="index.patches_lead">{{ t.index.patches_lead }}</p>
       </div>
     </div>
 
@@ -225,7 +220,8 @@
 
     <div class="text-center mt-5 reveal">
       <a href="#" class="wh-btn-secondary">
-        <i class="fa-solid fa-grid-2 me-2"></i>Browse All Patches
+        <i class="fa-solid fa-grid-2 me-2"></i>
+        <span data-t="index.btn_all_patches">{{t.index.btn_all_patches}}</span>
       </a>
     </div>
   </div>
@@ -236,8 +232,8 @@
 <section class="home-gallery py-section">
   <div class="container-xl px-4">
     <div class="text-center reveal mb-0">
-      <p class="wh-section-label">Showcase</p>
-      <h2 class="wh-section-title">Screenshot <em>Gallery</em></h2>
+      <p class="wh-section-label" data-t="index.showcase_label">{{ t.index.showcase_label }}</p>
+      <h2 class="wh-section-title" data-t="index.showcase_title">{{ t.index.showcase_title }}</h2>
     </div>
   </div>
   <div class="home-gallery__track-wrap mt-4">
@@ -283,7 +279,7 @@
 </section>
 
 
-<section class="home-news py-section">
+<!-- <section class="home-news py-section">
   <div class="container-xl px-4">
 
     <div class="row align-items-end g-4 mb-4">
@@ -297,7 +293,6 @@
     </div>
 
     <div class="row g-4">
-      <!-- Featured article -->
       <div class="col-lg-7 reveal">
         <article class="home-news-main">
           <div class="home-news-main__thumb">
@@ -320,7 +315,6 @@
         </article>
       </div>
 
-      <!-- Side news list -->
       <div class="col-lg-5 reveal reveal-delay-1">
         <div class="d-flex flex-column gap-3">
 
@@ -360,9 +354,9 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<div class="wh-divider-line"></div>
+<!-- <div class="wh-divider-line"></div> -->
 
 <section class="home-cta py-section">
   <div class="home-cta__bg-glow" aria-hidden="true"></div>

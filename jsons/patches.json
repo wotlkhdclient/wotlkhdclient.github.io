@@ -8,23 +8,16 @@
     },
     {
         "id": "xx-m",
-        "image": "/assets/patches/patch-m2_0_2s.png",
+        "image": "/assets/patches/patch-m1.png",
         "title": "Classic & TBC Dungeon Maps",
         "description": "The patch adds 56 maps from retail World of Warcraft, including dungeons, continents, and battlegrounds",
         "tags": ["Gameplay"]
     },
     {
         "id": "xx-n",
-        "image": "/assets/patches/patch-n2_0_2s.png",
-        "title": "Cavern and Mines Maps",
-        "description": "It includes various extra locations such as caves, mines, dungeon entrances, starting zones, and hidden areas like GM Island and Hyjal.",
-        "tags": ["Gameplay"]
-    },
-    {
-        "id": "xx-s",
-        "image": "/assets/patches/patch-s2_0_2s.png",
-        "title": "New Spells Visual Effects",
-        "description": "This patch adds several quality-of-life improvements to your login experience",
+        "image": "/assets/patches/patch-n1.png",
+        "title": "Caverns, Mines & Hidden Area Maps",
+        "description": "It adds extra locations not covered by the main patch: caves, mines, dungeon entrances, starting zones, and hidden areas like GM Island and Hyjal.",
         "tags": ["Gameplay"]
     },
     {

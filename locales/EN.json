@@ -28,7 +28,16 @@
     "comparison_title": "Feel the |Difference|",
     "comparison_lead": "Drag the divider to compare the original and enhanced graphics in different locations.",
     "comparison_label_before": "Default Client",
-    "comparison_label_after": "WotLK HD Client"
+    "comparison_label_after": "WotLK HD Client",
+    "features_label": "What's Included",
+    "features_title": "Everything you |Need|",
+    "features_lead": "A complete game mod created by the community for the community.",
+    "patches_label": "Our Modifications",
+    "patches_title": "Patches at a |Glance|",
+    "patches_lead": "Below is just a short list of our modifications. We’ve tried to cover every aspect of the game.",
+    "btn_all_patches": "Browse All Patches",
+    "showcase_label": "Showcase",
+    "showcase_title": "Screenshots |Gallery|"
   },
   "footer": {
     "note1": "WotLK HD Client - Non-commercial project · Not affiliated with Blizzard Entertainment",
