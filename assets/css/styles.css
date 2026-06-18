@@ -1713,9 +1713,9 @@ body {
   margin-top: 7px;
 }
 
-.download-cl-dot--add  { background: var(--wh-green); }
-.download-cl-dot--fix  { background: var(--wh-blue); }
-.download-cl-dot--warn { background: var(--wh-gold); }
+.download-cl-dot--updates  { background: var(--wh-green); }
+.download-cl-dot--changes  { background: var(--wh-blue); }
+.download-cl-dot--fixes { background: var(--wh-gold); }
 
 
 /* ─────────────────────────────────────────────
@@ -2546,7 +2546,7 @@ body.wh-modal-open { overflow: hidden; }
 .patch-wrap {
   max-width: 860px;
   margin: 0 auto;
-  padding: 108px 0 100px; /* 60px navbar + 48px отступ */
+  padding: 108px 20px 100px; /* 60px navbar + 48px отступ */
 }
 
 /* ─────────────────────────────────────────────
@@ -2930,6 +2930,6 @@ body.wh-modal-open { overflow: hidden; }
    RESPONSIVE
 ───────────────────────────────────────────── */
 @media (max-width: 767.98px) {
-  .patch-wrap { padding: 32px 0 64px; }
+  .patch-wrap { padding: 70px 20px 70px; }
   .patch-carousel__btn { width: 34px; height: 34px; font-size: 14px; }
 }

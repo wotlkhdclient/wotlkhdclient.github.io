@@ -36,10 +36,21 @@ export async function after({ params, query, t }) {
     });
   });
 
-  let resp = await fetch('jsons/downloads.json');
-  let data = await resp.json();
+  // let resp = await fetch('/jsons/downloads.json');
+  // let data = await resp.json();
 
-  data.forEach((d, i) => {
+  let [links, changelog] = await Promise.all([
+    fetch('/jsons/downloads.json').then(r => r.json()),
+    fetch('/data/changelog.md').then(r => r.text())
+  ])
+
+  const parsed = parseChangelog(changelog);
+  Object.keys(parsed).forEach(branch => {
+    const panel = document.querySelector(`#panel-${branch}`);
+    panel.querySelector('.download-cl-list').innerHTML = renderChangelog(parsed[branch], 0);
+  });
+
+  links.forEach((d, i) => {
     const panel = document.querySelector(`#panel-${d.name}`);
     const d_btn = document.querySelector(`#tag-${d.name}`);
     const d_tag = panel.querySelector('.download-ver-tag');
@@ -52,26 +63,56 @@ export async function after({ params, query, t }) {
       if (link) link.href = l.url;
     })
   });
+}
 
-  document.querySelectorAll('[data-modal-open]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.modalOpen;
-      document.getElementById(id).classList.add('open');
-      document.body.classList.add('wh-modal-open');
-    });
-  });
+function parseChangelog(md) {
+  const result = {};
+  let currentBranch = null;
 
-  document.querySelectorAll('[data-modal-close]').forEach(el => {
-    el.addEventListener('click', () => closeAll());
-  });
+  const lines = md.split('\n');
+  let i = 0;
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeAll();
-  });
+  while (i < lines.length) {
+    const line = lines[i].trim();
 
-  function closeAll() {
-    document.querySelectorAll('.wh-modal.open')
-      .forEach(m => m.classList.remove('open'));
-    document.body.classList.remove('wh-modal-open');
+    if (line.startsWith('# ')) {
+      currentBranch = line.slice(2).trim();
+      result[currentBranch] = [];
+      i++;
+      continue;
+    }
+
+    const dateMatch = line.match(/^\*\*Update (\d{2}\.\d{2}\.\d{4})\*\*:/);
+    if (dateMatch && currentBranch) {
+      const entry = {
+        date: dateMatch[1],
+        updates: [],
+        fixes: [],
+        changes: [],
+      };
+
+      i++;
+
+      while (i < lines.length) {
+        const inner = lines[i].trim();
+
+        if (inner === '---' || inner.startsWith('# ') || inner.match(/^\*\*Update /)) break;
+
+        if (inner.startsWith('-u ')) entry.updates.push(marked.parse(inner.slice(3).trim()));
+        else if (inner.startsWith('-f ')) entry.fixes.push(marked.parse(inner.slice(3).trim()));
+        else if (inner.startsWith('-m ')) entry.changes.push(marked.parse(inner.slice(3).trim()));
+
+        i++;
+      }
+
+      result[currentBranch].push(entry);
+
+      if (lines[i]?.trim() === '---') i++;
+      continue;
+    }
+
+    i++;
   }
+
+  return result;
 }

@@ -63,7 +63,7 @@
 
         <!-- Changelog -->
         <div class="col-lg-6">
-          <div class="download-changelog" data-modal-open="modal-example">
+          <div class="download-changelog">
             <div class="download-changelog__title" data-t="download.whatsnew">{{ t.download.whatsnew }}</div>
             <ul class="download-cl-list">
               <li class="download-cl-item">
@@ -436,43 +436,3 @@
     </div>
   </div>
 </section>
-
-
-
-<!-- Overlay + modal -->
-<div class="wh-modal" id="modal-example" role="dialog"
-     aria-modal="true" aria-labelledby="modal-title">
-
-  <!-- Backdrop (клик → закрыть) -->
-  <div class="wh-modal__backdrop" data-modal-close></div>
-
-  <div class="wh-modal__dialog">
-
-    <!-- Header -->
-    <div class="wh-modal__header">
-      <div class="wh-modal__header-icon">
-        <i class="fa-solid fa-download"></i>
-      </div>
-      <h2 class="wh-modal__title" id="modal-title">
-        Заголовок модалки
-      </h2>
-      <button class="wh-modal__close" data-modal-close
-              aria-label="Закрыть">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-
-    <!-- Body -->
-    <div class="wh-modal__body">
-      <p>Любой контент здесь.</p>
-    </div>
-
-    <!-- Footer -->
-    <div class="wh-modal__footer">
-      <button class="wh-btn-secondary" data-modal-close>
-        Закрыть
-      </button>
-    </div>
-
-  </div>
-</div>

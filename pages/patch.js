@@ -1,7 +1,6 @@
 import { markedVideo } from '../assets/plugins/marked-18.0.5/marked-video.js';
 
 export default async function ({ template, t }) {
-  document.title = `${t.patch_title ?? 'Patch'} | WotLK HD Client`;
   return Mustache.render(template, { t });
 }
 
@@ -19,6 +18,8 @@ export async function after({ query, t }) {
       return r.text();
     });
     html = DOMPurify.sanitize(marked.parse(raw));
+    const h3 = html.match(/<h3><strong>(.*?)<\/strong><\/h3>/);
+    if (h3) { document.title = `${h3[1]} | WotLK HD Client`; }
   } catch (err) {
     content.innerHTML = `<p style="color:var(--wh-text-muted)">${t.patch_load_error ?? 'Failed to load patch.'}</p>`;
     console.error(err);

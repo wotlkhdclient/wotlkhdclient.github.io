@@ -2,6 +2,8 @@
 ![Image](/assets/patches/patch-j2.png)
 ![Image](/assets/patches/patch-j3.png)
 
+### **Character Creation Screen - Mists of Pandaria Style**
+
 This patch replaces the character creation interface with a layout inspired by World of Warcraft: Mists of Pandaria.
 
 Key changes include:

@@ -37,7 +37,10 @@
     "patches_lead": "Below is just a short list of our modifications. We’ve tried to cover every aspect of the game.",
     "btn_all_patches": "Browse All Patches",
     "showcase_label": "Showcase",
-    "showcase_title": "Screenshots |Gallery|"
+    "showcase_title": "Screenshots |Gallery|",
+    "cta_label": "Get Started",
+    "cta_title": "Ready to |Upgrade| <br>Your Adventure?",
+    "cta_desc": "Join our community and become a part of the WotLK HD Client project."
   },
   "footer": {
     "note1": "WotLK HD Client - Non-commercial project · Not affiliated with Blizzard Entertainment",
