@@ -66,93 +66,65 @@
           <div class="download-changelog">
             <div class="download-changelog__title" data-t="download.whatsnew">{{ t.download.whatsnew }}</div>
             <ul class="download-cl-list">
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Нортренд HD Overhaul v2 — полная переработка текстур
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Spell VFX для Мага, Жреца и Шамана обновлены до v3.1
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Legendary Weapons Pack v1.4 включён в поставку
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--fix"></span>
-                Исправлены артефакты текстур в подземельях Аутленда
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--fix"></span>
-                Устранён конфликт патчей воды и атмосферы
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--fix"></span>
-                Оптимизирован размер MIP-цепочек для 2K-текстур
-              </li>
+              
             </ul>
           </div>
         </div>
       </div>
 
       <!-- Sources -->
-      <h2 class="download-sources-title">Источники загрузки</h2>
-      <p class="download-sources-sub">Все источники содержат одинаковые файлы. Выберите удобный способ.</p>
+      <h2 class="download-sources-title" data-t="download.sources_title">{{ t.download.sources_title }}</h2>
+      <p class="download-sources-sub" data-t="download.sources_sub">{{ t.download.sources_sub }}</p>
 
       <div class="download-sources-grid">
 
         <a href="#" target="_blank" class="download-source-card src-torrent">
           <div class="download-source-icon"><i class="fa-solid fa-magnet"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Торрент</div>
-            <div class="download-source-desc">Самый быстрый способ. Скачайте .torrent-файл и откройте в любом клиенте.
-            </div>
+            <div class="download-source-name" data-t="download.torrent">{{ t.download.torrent }}</div>
+            <div class="download-source-desc" data-t="download.torrent_desc">{{ t.download.torrent_desc }}</div>
           </div>
-          <span class="download-source-badge badge-recommended">Рекомендуем</span>
+          <span class="download-source-badge badge-recommended" data-t="download.recommended">{{ t.download.recommended }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-gdrive">
           <div class="download-source-icon"><i class="fa-brands fa-google-drive"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Google Drive</div>
-            <div class="download-source-desc">Прямая загрузка через Google Drive. Без ограничений скорости при
-              авторизации.</div>
+            <div class="download-source-name" data-t="download.gdrive">{{ t.download.gdrive }}</div>
+            <div class="download-source-desc" data-t="download.gdrive_desc">{{ t.download.gdrive_desc }}</div>
           </div>
-          <span class="download-source-badge badge-fast">Быстро</span>
+          <span class="download-source-badge badge-fast" data-t="download.fast">{{ t.download.fast }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-mailru">
           <div class="download-source-icon"><i class="fa-solid fa-cloud"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Облако Mail.RU</div>
-            <div class="download-source-desc">Зеркало на российском облачном хранилище. Высокая скорость для РФ и СНГ.
-            </div>
+            <div class="download-source-name" data-t="download.mailru">{{ t.download.mailru }}</div>
+            <div class="download-source-desc" data-t="download.mailru_desc">{{ t.download.mailru_desc }}</div>
           </div>
-          <span class="download-source-badge badge-mirror">Зеркало</span>
+          <span class="download-source-badge badge-mirror" data-t="download.mirror">{{ t.download.mirror }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-nextcloud">
           <div class="download-source-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">NextCloud</div>
-            <div class="download-source-desc">Самостоятельно хостируемое зеркало. Независимость от сторонних сервисов.
-            </div>
+            <div class="download-source-name" data-t="download.nextcloud">{{ t.download.nextcloud }}</div>
+            <div class="download-source-desc" data-t="download.nextcloud_desc">{{ t.download.nextcloud_desc }}</div>
           </div>
-          <span class="download-source-badge badge-mirror">Зеркало</span>
+          <span class="download-source-badge badge-mirror" data-t="download.mirror">{{ t.download.mirror }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-direct download-source-card--full">
           <div class="download-source-icon"><i class="fa-solid fa-link"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Прямая ссылка</div>
-            <div class="download-source-desc">HTTP-ссылка для загрузчиков типа JDownloader, IDM и аналогов. Скопируйте
-              ссылку и вставьте в менеджер загрузок для возобновляемой закачки.</div>
+            <div class="download-source-name" data-t="download.direct_link">{{ t.download.direct_link }}</div>
+            <div class="download-source-desc" data-t="download.direct_link_desc">{{ t.download.direct_link_desc }}</div>
           </div>
-          <span class="download-source-badge badge-advanced">JDownloader / IDM</span>
+          <span class="download-source-badge badge-advanced" data-t="download.advanced">{{ t.download.advanced }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
@@ -201,93 +173,65 @@
           <div class="download-changelog">
             <div class="download-changelog__title" data-t="download.whatsnew">{{ t.download.whatsnew }}</div>
             <ul class="download-cl-list">
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Экспериментальный пак персонажей: Гном и Дворф HD
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Spell VFX: Разбойник и Охотник (в разработке)
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Новая система частиц для огня и лавы (Molten Core)
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--add"></span>
-                Sky Rework v2 — новые небеса для Восточных Королевств
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--warn"></span>
-                Возможны артефакты в зонах Аутленда при 4K
-              </li>
-              <li class="download-cl-item">
-                <span class="download-cl-dot download-cl-dot--warn"></span>
-                Конфликт с некоторыми аддонами UI — в исправлении
-              </li>
+              
             </ul>
           </div>
         </div>
       </div>
 
       <!-- Sources -->
-      <h2 class="download-sources-title">Источники загрузки</h2>
-      <p class="download-sources-sub">Бета-версия доступна через те же источники, что и Stable.</p>
+      <h2 class="download-sources-title" data-t="download.sources_title">{{ t.download.sources_title }}</h2>
+      <p class="download-sources-sub" data-t="download.sources_sub">{{ t.download.sources_sub }}</p>
 
       <div class="download-sources-grid">
 
         <a href="#" target="_blank" class="download-source-card src-torrent">
           <div class="download-source-icon"><i class="fa-solid fa-magnet"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Торрент</div>
-            <div class="download-source-desc">Самый быстрый способ. Скачайте .torrent-файл и откройте в любом клиенте.
-            </div>
+            <div class="download-source-name" data-t="download.torrent">{{ t.download.torrent }}</div>
+            <div class="download-source-desc" data-t="download.torrent_desc">{{ t.download.torrent_desc }}</div>
           </div>
-          <span class="download-source-badge badge-recommended">Рекомендуем</span>
+          <span class="download-source-badge badge-recommended" data-t="download.recommended">{{ t.download.recommended }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-gdrive">
           <div class="download-source-icon"><i class="fa-brands fa-google-drive"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Google Drive</div>
-            <div class="download-source-desc">Прямая загрузка через Google Drive. Без ограничений скорости при
-              авторизации.</div>
+            <div class="download-source-name" data-t="download.gdrive">{{ t.download.gdrive }}</div>
+            <div class="download-source-desc" data-t="download.gdrive_desc">{{ t.download.gdrive_desc }}</div>
           </div>
-          <span class="download-source-badge badge-fast">Быстро</span>
+          <span class="download-source-badge badge-fast" data-t="download.fast">{{ t.download.fast }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-mailru">
           <div class="download-source-icon"><i class="fa-solid fa-cloud"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Облако Mail.RU</div>
-            <div class="download-source-desc">Зеркало на российском облачном хранилище. Высокая скорость для РФ и СНГ.
-            </div>
+            <div class="download-source-name" data-t="download.mailru">{{ t.download.mailru }}</div>
+            <div class="download-source-desc" data-t="download.mailru_desc">{{ t.download.mailru_desc }}</div>
           </div>
-          <span class="download-source-badge badge-mirror">Зеркало</span>
+          <span class="download-source-badge badge-mirror" data-t="download.mirror">{{ t.download.mirror }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-nextcloud">
           <div class="download-source-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">NextCloud</div>
-            <div class="download-source-desc">Самостоятельно хостируемое зеркало. Независимость от сторонних сервисов.
-            </div>
+            <div class="download-source-name" data-t="download.nextcloud">{{ t.download.nextcloud }}</div>
+            <div class="download-source-desc" data-t="download.nextcloud_desc">{{ t.download.nextcloud_desc }}</div>
           </div>
-          <span class="download-source-badge badge-mirror">Зеркало</span>
+          <span class="download-source-badge badge-mirror" data-t="download.mirror">{{ t.download.mirror }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
         <a href="#" target="_blank" class="download-source-card src-direct download-source-card--full">
           <div class="download-source-icon"><i class="fa-solid fa-link"></i></div>
           <div class="download-source-info">
-            <div class="download-source-name">Прямая ссылка</div>
-            <div class="download-source-desc">HTTP-ссылка для загрузчиков типа JDownloader, IDM и аналогов. Скопируйте
-              ссылку и вставьте в менеджер загрузок для возобновляемой закачки.</div>
+            <div class="download-source-name" data-t="download.direct_link">{{ t.download.direct_link }}</div>
+            <div class="download-source-desc" data-t="download.direct_link_desc">{{ t.download.direct_link_desc }}</div>
           </div>
-          <span class="download-source-badge badge-advanced">JDownloader / IDM</span>
+          <span class="download-source-badge badge-advanced" data-t="download.advanced">{{ t.download.advanced }}</span>
           <span class="download-source-arrow" aria-hidden="true">→</span>
         </a>
 
@@ -302,61 +246,37 @@
   <div class="wh-divider-line my-0"></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════════════
-       INSTALL STEPS
-  ═══════════════════════════════════════════════ -->
 <section class="download-install py-section">
   <div class="container-xl px-4">
 
     <div class="mb-4">
-      <h2 class="download-section-title">Инструкция по установке</h2>
-      <p class="download-section-sub">Стандартная процедура занимает около 5 минут.</p>
+      <h2 class="download-section-title" data-t="download.install_title">{{ t.download.install_title }}</h2>
+      <p class="download-section-sub" data-t="download.install_sub">{{ t.download.install_sub }}</p>
     </div>
 
     <ol class="download-steps">
 
-      <li class="download-step reveal">
+      <li class="download-step reveal reveal-delay-0">
         <div class="download-step__num">1</div>
         <div class="download-step__body">
-          <h3 class="download-step__title">Убедитесь что клиент WoW 3.3.5a установлен</h3>
-          <p class="download-step__desc">
-            Необходим чистый (ванильный) клиент версии 3.3.5a (12340). Патчи несовместимы с другими версиями клиента.
-          </p>
+          <h3 class="download-step__title" data-t="download.install_step1_title">{{ t.download.install_step1_title }}</h3>
+          <p class="download-step__desc" data-t="download.install_step1_desc">{{ t.download.install_step1_desc }}</p>
         </div>
       </li>
 
       <li class="download-step reveal reveal-delay-1">
         <div class="download-step__num">2</div>
         <div class="download-step__body">
-          <h3 class="download-step__title">Скачайте пакет через удобный источник</h3>
-          <p class="download-step__desc">
-            Выберите Stable или Beta выше и скачайте архив через любой из доступных источников. Рекомендуем торрент для
-            максимальной скорости.
-          </p>
+          <h3 class="download-step__title" data-t="download.install_step2_title">{{ t.download.install_step2_title }}</h3>
+          <p class="download-step__desc" data-t="download.install_step2_desc">{{ t.download.install_step2_desc }}</p>
         </div>
       </li>
 
       <li class="download-step reveal reveal-delay-2">
         <div class="download-step__num">3</div>
         <div class="download-step__body">
-          <h3 class="download-step__title">Распакуйте архив в папку Data клиента</h3>
-          <p class="download-step__desc">
-            Распакуйте содержимое архива в папку
-            <code class="download-step__code">WoW/Data/</code>.
-            При запросе на замену файлов — подтвердите. Оригинальные файлы клиента не изменяются.
-          </p>
-        </div>
-      </li>
-
-      <li class="download-step reveal reveal-delay-3">
-        <div class="download-step__num">4</div>
-        <div class="download-step__body">
-          <h3 class="download-step__title">Запустите игру</h3>
-          <p class="download-step__desc">
-            Запустите <code class="download-step__code">WoW.exe</code> как обычно. Новая графика загрузится
-            автоматически — никаких дополнительных настроек не требуется.
-          </p>
+          <h3 class="download-step__title" data-t="download.install_step3_title">{{ t.download.install_step3_title }}</h3>
+          <p class="download-step__desc" data-t="download.install_step3_desc">{{ t.download.install_step3_desc }}</p>
         </div>
       </li>
 
@@ -369,7 +289,7 @@
 </div>
 
 
-<section class="download-sysreq py-section">
+<!-- <section class="download-sysreq py-section">
   <div class="container-xl px-4">
 
     <div class="mb-4">
@@ -435,4 +355,4 @@
 
     </div>
   </div>
-</section>
+</section> -->

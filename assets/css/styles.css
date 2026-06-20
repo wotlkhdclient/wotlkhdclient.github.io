@@ -1816,6 +1816,7 @@ body {
   --card-bg-hover:  rgba(61,214,140,.06);
   --card-icon-bg:   rgba(61,214,140,.10);
   --card-border:    rgba(61,214,140,.18);
+  --card-icon:      rgba(61,214,140,1);
 }
 
 .src-gdrive {
@@ -1823,6 +1824,7 @@ body {
   --card-bg-hover:  rgba(66,133,244,.07);
   --card-icon-bg:   rgba(66,133,244,.10);
   --card-border:    rgba(66,133,244,.18);
+  --card-icon:      rgba(66,133,244,1);
 }
 
 .src-mailru {
@@ -1830,6 +1832,7 @@ body {
   --card-bg-hover:  rgba(0,119,255,.06);
   --card-icon-bg:   rgba(0,119,255,.10);
   --card-border:    rgba(0,119,255,.16);
+  --card-icon:      rgba(0,119,255,1);
 }
 
 .src-nextcloud {
@@ -1837,6 +1840,7 @@ body {
   --card-bg-hover:  rgba(0,130,201,.06);
   --card-icon-bg:   rgba(0,130,201,.10);
   --card-border:    rgba(0,130,201,.16);
+  --card-icon:      rgba(0,130,201,1);
 }
 
 .src-direct {
@@ -1844,6 +1848,7 @@ body {
   --card-bg-hover:  rgba(232,160,48,.06);
   --card-icon-bg:   rgba(232,160,48,.10);
   --card-border:    rgba(232,160,48,.18);
+  --card-icon:      rgba(232,160,48,1);
 }
 
 /* Source icon */
@@ -1859,7 +1864,7 @@ body {
   border: 1px solid var(--card-border, rgba(100,160,220,.18));
   background: var(--card-icon-bg, rgba(60,120,200,.10));
   transition: transform .2s;
-  color: inherit;
+  color: var(--card-icon, rgba(60,120,200,1));
 }
 
 .download-source-card:hover .download-source-icon {
@@ -2037,7 +2042,7 @@ body {
   margin: 0;
 }
 
-.download-step__code {
+.download-step code {
   display: inline-block;
   margin-top: 6px;
   font-family: 'Courier New', monospace;
@@ -2048,6 +2053,11 @@ body {
   border-radius: 5px;
   padding: 3px 10px;
   letter-spacing: .5px;
+}
+
+.download-step em {
+  font-style: normal;
+  color: var(--wh-gold);
 }
 
 
