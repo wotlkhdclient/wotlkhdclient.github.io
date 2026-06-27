@@ -228,10 +228,6 @@ async function loadView(viewName, params = {}, query = {}, navigationId) {
   }
 }
 export async function navigate(path, pushState = true) {
-  const isSamePath = location.pathname + location.search === path;
-  if (isSamePath && !pushState) return;
-  if (isSamePath && pushState) { pushState = false; }
-
   const navigationId = ++currentNavigationId;
   const { pathname, query } = parseQuery(path);
   const viewName = matchRoute(pathname)?.view ?? '404';
