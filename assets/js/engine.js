@@ -1,9 +1,9 @@
 import { initHeader, initFooter } from './layout.js';
 import { routes } from './routes.js';
 
-let currentLang = localStorage.getItem('lang')
+let currentLang = (localStorage.getItem('lang')
   || navigator.language.split('-')[0]
-  || 'en';
+  || 'EN').toUpperCase();
 
 let translations = {};
 let languages = [];
@@ -47,8 +47,8 @@ async function loadLanguage(lang) {
     const res = await fetch(`locales/${lang}.json`);
     if (!res.ok) {
       console.warn(`Language "${lang}" not found, falling back to "en"`);
-      if (lang === 'en') { translations = {}; return; }
-      return loadLanguage('en');
+      if (lang === 'EN') { translations = {}; return; }
+      return loadLanguage('EN');
     }
     translations = await res.json();
     document.documentElement.setAttribute('lang', lang);
@@ -228,13 +228,15 @@ async function loadView(viewName, params = {}, query = {}, navigationId) {
   }
 }
 export async function navigate(path, pushState = true) {
+  const isSamePath = location.pathname + location.search === path;
+  if (isSamePath && !pushState) return;
+  if (isSamePath && pushState) { pushState = false; }
+
   const navigationId = ++currentNavigationId;
   const { pathname, query } = parseQuery(path);
   const viewName = matchRoute(pathname)?.view ?? '404';
 
-  if (pushState) {
-    history.pushState({}, '', path);
-  }
+  if (pushState) { history.pushState({}, '', path); }
 
   try {
     window.scrollTo(0, 0);
