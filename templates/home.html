@@ -133,11 +133,8 @@
         <div class="home-features__icon icon-blue">
           <i class="fa-solid fa-layer-group"></i>
         </div>
-        <h3 class="home-features__title">HD Textures</h3>
-        <p class="home-features__desc">
-          Over 10,000 remastered textures at up to 4K resolution. Terrain, buildings,
-          characters and UI — all upscaled with AI and hand-corrected.
-        </p>
+        <h3 class="home-features__title" data-t="index.features_textures">{{ t.index.features_textures }}</h3>
+        <p class="home-features__desc" data-t="index.features_textures_desc">{{ t.index.features_textures_desc }}</p>
       </article>
 
       <article class="home-features__card reveal reveal-delay-2">
@@ -145,11 +142,8 @@
         <div class="home-features__icon icon-gold">
           <i class="fa-solid fa-cube"></i>
         </div>
-        <h3 class="home-features__title">Remastered Models</h3>
-        <p class="home-features__desc">
-          Character and creature models rebuilt with higher polygon counts while preserving
-          the iconic WotLK art direction you love.
-        </p>
+        <h3 class="home-features__title" data-t="index.features_models">{{ t.index.features_models }}</h3>
+        <p class="home-features__desc" data-t="index.features_models_desc">{{ t.index.features_models_desc }}</p>
       </article>
 
       <article class="home-features__card reveal reveal-delay-3">
@@ -157,47 +151,35 @@
         <div class="home-features__icon icon-green">
           <i class="fa-solid fa-wand-magic-sparkles"></i>
         </div>
-        <h3 class="home-features__title">Spell Effects</h3>
-        <p class="home-features__desc">
-          Revamped particle systems and visual effects for hundreds of spells.
-          Frost, fire, arcane — all with enhanced clarity and impact.
-        </p>
+        <h3 class="home-features__title" data-t="index.features_effects">{{ t.index.features_effects }}</h3>
+        <p class="home-features__desc" data-t="index.features_effects_desc">{{ t.index.features_effects_desc }}</p>
       </article>
 
       <article class="home-features__card reveal reveal-delay-1">
         <div class="home-features__card-glow glow-violet" aria-hidden="true"></div>
         <div class="home-features__icon icon-violet">
-          <i class="fa-solid fa-music"></i>
+          <i class="fa-solid fa-puzzle-piece"></i>
         </div>
-        <h3 class="home-features__title">Ambient Audio</h3>
-        <p class="home-features__desc">
-          Remastered ambient soundscapes and environmental audio to complement
-          the new visual fidelity across all zones.
-        </p>
+        <h3 class="home-features__title" data-t="index.features_expanded">{{ t.index.features_expanded }}</h3>
+        <p class="home-features__desc" data-t="index.features_expanded_desc">{{ t.index.features_expanded_desc }}</p>
       </article>
 
       <article class="home-features__card reveal reveal-delay-2">
         <div class="home-features__card-glow glow-cyan" aria-hidden="true"></div>
         <div class="home-features__icon icon-cyan">
-          <i class="fa-solid fa-sliders"></i>
+          <i class="fa-solid fa-map"></i>
         </div>
-        <h3 class="home-features__title">Patch Builder</h3>
-        <p class="home-features__desc">
-          Customise exactly which patches you install. Pick only the content
-          categories you want with our granular patch builder tool.
-        </p>
+        <h3 class="home-features__title" data-t="index.features_restored">Restored Content</h3>
+        <p class="home-features__desc" data-t="index.features_restored_desc">{{ t.index.features_restored_desc }}</p>
       </article>
 
       <article class="home-features__card reveal reveal-delay-3">
         <div class="home-features__card-glow glow-rose" aria-hidden="true"></div>
         <div class="home-features__icon icon-rose">
-          <i class="fa-solid fa-shield-halved"></i>
+          <i class="fa-solid fa-sliders"></i>
         </div>
-        <h3 class="home-features__title">Safe & Clean</h3>
-        <p class="home-features__desc">
-          Client-side only. No server interaction, no account risks. Fully
-          reversible — restore your original client in one click.
-        </p>
+        <h3 class="home-features__title" data-t="index.features_flexible">{{ t.index.features_flexible }}</h3>
+        <p class="home-features__desc" data-t="index.features_flexible_desc">{{ t.index.features_flexible_desc }}</p>
       </article>
 
     </div>
@@ -219,7 +201,7 @@
     <div class="row g-4 home-patches__list"></div>
 
     <div class="text-center mt-5 reveal">
-      <a href="#" class="wh-btn-secondary">
+      <a href="/patches" class="wh-btn-secondary">
         <i class="fa-solid fa-grid-2 me-2"></i>
         <span data-t="index.btn_all_patches">{{t.index.btn_all_patches}}</span>
       </a>
