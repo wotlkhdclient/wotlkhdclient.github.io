@@ -1,6 +1,7 @@
 [
     { "code": "EN", "flag": "🇺🇸", "name": "English" },
     { "code": "RU", "flag": "🇷🇺", "name": "Русский" },
+    { "code": "TAT", "flag": "", "name": "Татарча" },
     { "code": "DE", "flag": "🇩🇪", "name": "Deutsch" },
     { "code": "KO", "flag": "🇰🇷", "name": "한국어" }
 ]
